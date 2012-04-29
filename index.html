@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<title>Displeased Avians</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+body {
+  background: #e4f8fc url('bgimage.png') center top no-repeat;
+}
+#main {
+  width: 1028px;
+  height: 772px;
+  background: url('angrybirds.png');
+  margin: 150px auto 0 auto;
+  position: relative;
+}
+#button {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  bottom: 150px;
+  right: 212px;
+  cursor: pointer;
+}
+#buyflow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  //display: none;
+}
+#buybg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .5;
+  z-index: 1;
+}
+#frame {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -300px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  overflow: hidden;
+  
+  background: #fff;
+  border: 1px solid #ACACAC;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+#left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: 15px;
+  border-right: 1px solid #eee;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+#right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 500px;
+  z-index: -1;
+  background: url('exclusive_paper.png');
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+$(function() {
+  $('#button').click(function() {
+    $('#buyflow').show();
+  });
+  $('#buybg').click(function() {
+    $('#buyflow').hide();
+  });
+});
+</script>
+</head>
+
+<body>
+<div id="main">
+  <div id="button"></div>
+</div>
+<div id="buyflow">
+  <div id="buybg"></div>
+  <div id="frame">
+    <div id="left">
+      <img src="eagle.png" />
+    </div>
+    <div id="right">
+    
+    </div>
+  </div>
+</div>
+</body>
+</html>
