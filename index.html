@@ -3,6 +3,10 @@
 <head>
 <title>Displeased Avians</title>
 <style>
+a, a:link {
+  color: #1155CC;
+  text-decoration: none;
+}
 * {
   margin: 0;
   padding: 0;
@@ -15,8 +19,8 @@ html, body {
 }
 body {
   background: #e4f8fc url('bgimage.png') center top no-repeat;
-  font: 13px/1.5em Arial;
-  color: #333;
+  font: 13px/18px Arial;
+  color: #222;
 }
 #main {
   width: 1028px;
@@ -51,6 +55,12 @@ body {
   opacity: .5;
   z-index: 1;
 }
+.butter {
+  background: #F9EDBE;
+  border-bottom: 1px solid #DDD8C0;
+  padding: 15px;
+  padding-bottom: 10px;
+}
 #frame {
   width: 650px;
   height: 350px;
@@ -74,22 +84,74 @@ body {
     top: 0;
     width: 50%;
     height: 100%;
-    padding: 15px 40px;
-    border-right: 1px solid #eee;
+    border-right: 1px solid #ccc;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   }
-    #itemthumb {
-      margin: 10px auto;
-      border: 1px solid #ACACAC;
+    #iteminfo {
+      border-bottom: 1px solid #ccc;
+      padding: 15px;
     }
-      #itemthumb img {
-        width: 50%;
+      #iteminfo img {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
         float: left;
       }
-      #buybutton {
-        border-top: 1px solid #ACACAC;
-        text-align: center;
+    #sellerinfo {
+      padding: 10px 15px 5px 15px;
+      border-bottom: 1px solid #ccc;
+      -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+      -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+      box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+      height: 65px;
+      background: #F1F1F1 url('logo_rovio.png') no-repeat center right;
+      background-size: contain;
+    }
+      #total {
+        height: 50px;
+        font-size: 50px;
+        line-height: 50px;
+        font-weight: bold;
+        float: left;
+        position: relative;
       }
+        #totallabel {
+          display: block;
+          font-size: 13px;
+          line-height: 13px;
+          font-weight: normal;
+          position: absolute;
+          top: 5px;
+          left: 7px;
+        }
+        #dollar {
+          font-size: 25px;
+          margin-left: 20px;
+        }
+        #subtotals {
+          font-size: 15px;
+          line-height: 15px;
+          font-weight: normal;
+          margin-bottom: -2px;
+          position: relative;
+          display: inline-block;
+          height: 40px;
+          width: 90px;
+        }
+        #subtotals b {
+          float: right;
+        }
+        #subtotal {
+          width: 100%;
+          position: absolute;
+          top: 0;
+        }
+        #taxes {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+        }
   #right {
     position: absolute;
     right: 0;
@@ -128,16 +190,28 @@ $(function() {
   <div id="buybg"></div>
   <div id="frame">
     <div id="left">
-      A mighty eagle decimates your enemies with deadly precision - buy one today.
-      <div id="itemthumb">
-        <img src="logo_rovio.png" />
+      <div class="butter">
+        This item brought to you by <b>Rovio</b>. <a href="#">Learn more</a>
+      </div>
+      <div id="iteminfo">
         <img src="eagle.png" />
+        <b>A Mighty Eagle</b>
+        <p>
+          A mighty eagle decimates your enemies with deadly precision - buy one today.
+        </p>
         <div style="clear:both"></div>
-        <div id="buybutton">
-          BUY - $1.99
+      </div>
+      <div id="sellerinfo">
+        <div id="total">
+          <span id="totallabel">total</span>
+          <span id="dollar">$</span>
+          2.12
+          <div id="subtotals">
+            <span id="subtotal">subtotal <b>1.99</b></span>
+            <span id="taxes">taxes <b>0.13</b></span>
+          </div>
         </div>
       </div>
-
     </div>
     <div id="right">
       <div id="visa"></div>
