@@ -121,11 +121,11 @@ body {
           font-weight: normal;
           position: absolute;
           top: 5px;
-          left: 7px;
+          left: 114px;
         }
         #dollar {
           font-size: 25px;
-          margin-left: 20px;
+          margin-left: 10px;
         }
         #subtotals {
           font-size: 15px;
@@ -151,7 +151,7 @@ body {
           bottom: 0;
         }
       #buybutton {
-        margin: 15px 30px;
+        margin: 15px 22px;
         display: block;
         height: 40px;
         font-size: 2em;
@@ -197,8 +197,8 @@ $(function() {
 
 <body>
 <ul>
-<li>• Base</li>
-<li>• <a href='index_01_not_logged_in.html'>Not Logged In</a></li>
+<li>• <a href='index.html'>Base</a></li>
+<li>• Not Logged In</a></li>
 <li>• <a href='index_02_logged_in.html'>Logged In</a></li>
 </ul>
 <div id="main">
@@ -213,7 +213,7 @@ $(function() {
       </div>
       <div id="iteminfo">
         <img src="eagle.png" />
-        <b>A Mighty Eagle</b>
+        <b>Mighty Eagle (qty: 1)</b>
         <p>
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
@@ -221,20 +221,28 @@ $(function() {
       </div>
       <div id="sellerinfo">
         <div id="total">
-          <span id="totallabel">total</span>
-          <span id="dollar">$</span>
-          2.12
           <div id="subtotals">
             <span id="subtotal">subtotal <b>1.99</b></span>
             <span id="taxes">taxes <b>0.13</b></span>
           </div>
+          <span id="totallabel">total</span>
+          <span id="dollar">$</span>
+          2.12
         </div>
       </div>
-      <div id="buybutton" class="kd-button kd-button-submit">Buy Now</div>
+      <div id="buybutton" class="kd-button kd-button-submit"><img src='goowallet_logo_01.png' height='25'> Log In &amp; Buy Now</div>
     </div>
     <div id="right">
-      Info
-    </div>
+        <div style='padding-top: 60px; padding-left: 5px;'>
+            <div style='padding: 5px 0px -1px 5px; float: left;'>
+                <img src='security_lock.png' width='24' height='24' />
+            </div>
+            <div style='padding: 5px 0px 0px 5px; float: left; margin-bottom: 10px;'>
+                <span style='font-size: 16px; font-weight: bold;'>Security Check Required</span>
+            </div>
+        </div>
+        <div style='padding: 0px 5px 0px 5px;'>Making this purchase requires being logged into Google Wallet.  We have added this step as an extra security measure, to help ensure that nobody but you is making a purchase with your account.
+        </div>
   </div>
 </div>
 </body>
