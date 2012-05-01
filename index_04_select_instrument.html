@@ -63,7 +63,7 @@ body {
 }
 #frame {
   width: 650px;
-  height: 330px;
+  height: 360px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -119,11 +119,11 @@ body {
           font-weight: normal;
           position: absolute;
           top: 5px;
-          left: 7px;
+          left: 114px;
         }
         #dollar {
           font-size: 25px;
-          margin-left: 20px;
+          margin-left: 10px;
         }
         #subtotals {
           font-size: 15px;
@@ -149,7 +149,7 @@ body {
           bottom: 0;
         }
       #buybutton {
-        margin: 15px 30px;
+        margin: 15px 22px;
         display: block;
         height: 40px;
         font-size: 2em;
@@ -157,9 +157,6 @@ body {
         border-radius: 8px;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
-      }
-      #buybutton.disabled {
-        box-shadow: none;
       }
   #right {
     position: absolute;
@@ -173,55 +170,38 @@ body {
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ACACAC;
-    padding: 15px 15px 15px 25px;
-    -webkit-transition: left 1s;
+    padding-left: 10px;
   }
-    #right h3 {
-      padding-left: 15px;
-      background: url('lock.png') no-repeat 3px 3px;
-      margin-bottom: 5px;
+    #visa {
+      width: 200px;
+      height: 133px;
+      margin: 15px auto;
+      background: url('visa.png') no-repeat;
+      background-size: contain;
     }
-  
-  #config {
-    border-radius: 15px;
-    padding: 15px;
-    background: #fff;
-    position: absolute;
-    top: 200px;
-    left: 200px;
-  }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 $(function() {
   $('#button').click(function() {
-    $('#right').css('left', '15%');
-    $('#buyflow').show('fast', function() {
-      if ($('input:radio[name=loggedin]:checked').val() != 'true') {
-        slideOut();
-      }
-    });
+    $('#buyflow').show();
   });
   $('#buybg').click(function() {
-    $('#buyflow').hide('fast');
+    $('#buyflow').hide();
   });
 });
-
-function slideIn() {
-  $('#right').css('left', '15%');
-}
-function slideOut() {
-  $('#right').css('left', '50%');
-}
 </script>
 </head>
 
 <body>
+<ul>
+<li>• <a href='index.html'>Base</a></li>
+<li>• <a href='index_01_not_logged_in.html'>Not Logged In</a></li>
+<li>• <a href='index_02_no_instrument.html'>No Instrument</a></li>
+<li>• <a href='index_03_logged_in.html'>Logged In</a></li>
+<li>• Select Instrument</li>
+</ul>
 <div id="main">
-  <div id="config">
-    <input type="radio" name="loggedin" value="true" checked> Logged in <br /> 
-    <input type="radio" name="loggedin" value="false"> Not Logged in <br />
-  </div>
   <div id="button"></div>
 </div>
 <div id="buyflow">
@@ -233,31 +213,31 @@ function slideOut() {
       </div>
       <div id="iteminfo">
         <img src="eagle.png" />
-        <b>A Mighty Eagle</b>
+        <b>Mighty Eagle (qty: 1)</b>
         <p>
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
         <div style="clear:both"></div>
       </div>
+        <div style='text-align: right; color: #777; padding-top: 3px; margin-right: 5px;'>
+            <img src='mc_logo.png'> -0484
+            <a href='index_04_select_instrument.html' style='font-size: 10px;'>change &#187;</a>
+        </div>
       <div id="sellerinfo">
         <div id="total">
-          <span id="totallabel">total</span>
-          <span id="dollar">$</span>
-          2.12
           <div id="subtotals">
             <span id="subtotal">subtotal <b>1.99</b></span>
             <span id="taxes">taxes <b>0.13</b></span>
           </div>
+          <span id="totallabel">total</span>
+          <span id="dollar">$</span>
+          2.12
         </div>
       </div>
-      <div id="buybutton" class="kd-button kd-button-submit disabled">Buy Now</div>
+      <div id="buybutton" class="kd-button kd-button-submit"><img src='gwallet_icon.png' style='border: 1px solid #aaa; background-color: #ccc;' height='25'> Buy Now</div>
     </div>
     <div id="right">
-      <h3>Security Check Required</h3>
-      <p>
-        We need to log you into Google to ensure your security. We'll open a window to do that in 3... 2... 1...
-      </p>
-    </div>
+        Instrument selector goes here - as card are changed (by whatever selection method is here), change the card icon &amp; last 4 digits in the left-hand pane.
   </div>
 </div>
 </body>
