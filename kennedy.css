@@ -29,6 +29,37 @@
 	-moz-user-select:none;
 	cursor:default;
 }
+.kd-button-disabled {
+	display: inline-block;
+	min-width: 54px;*min-width:70px;/*hello,IE7!*/
+	border:1px solid #DCDCDC;
+	border: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+	color: #777;
+	font-size: 11px;
+	font-weight: bold;
+	height: 27px;
+	padding: 0 8px;
+	line-height: 27px;
+	-webkit-border-radius:2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-transition: all 0.218s;
+	-moz-transition: all 0.218s;
+	-o-transition: all 0.218s;
+	transition: all 0.218s;
+	background-color: #f5f5f5;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f5f5f5),to(#f1f1f1));
+	background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
+	background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f5f5f5',EndColorStr='#f1f1f1');
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	cursor:default;
+}
 .kd-button:hover, .kd-button.hover {
 	border: 1px solid #C6C6C6;
 	color: #222;
@@ -105,6 +136,17 @@
 	background-image: -ms-linear-gradient(top,#4d90fe,#4787ed);
 	background-image: -o-linear-gradient(top,#4d90fe,#4787ed);
 	background-image: linear-gradient(top,#4d90fe,#4787ed);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndColorStr='#4787ed');
+}
+.kd-button-submit-disabled {
+	border-color: #adadad;
+	background-color: #bdbdbd;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#4787ed));
+	background-image: -webkit-linear-gradient(top,#bdbdbd,#bdbdbd);
+	background-image: -moz-linear-gradient(top,#bdbdbd,#bdbdbd);
+	background-image: -ms-linear-gradient(top,#bdbdbd,#bdbdbd);
+	background-image: -o-linear-gradient(top,#bdbdbd,#bdbdbd);
+	background-image: linear-gradient(top,#bdbdbd,#bdbdbd);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndColorStr='#4787ed');
 }
 .kd-button-submit:hover {
