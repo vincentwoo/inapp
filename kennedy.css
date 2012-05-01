@@ -118,3 +118,27 @@
 	background-image: linear-gradient(top,#4d90fe,#357ae8);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#4d90fe',EndColorStr='#357ae8');
 }
+
+.kd-button.disabled, .kd-button.disabled:hover, .kd-button.disabled:active {
+background: none;
+color: #B8B8B8;
+border: 1px solid #F3F3F3;
+border: 1px solid rgba(0, 0, 0, 0.05);
+cursor: default;
+pointer-events: none;
+}
+
+.kd-button-submit.disabled, .kd-button-submit.disabled:hover, .kd-button-submit.disabled:active, .kd-button-share.disabled, .kd-button-share.disabled:hover, .kd-button-share.disabled:active, .kd-button-action.disabled, .kd-button-action.disabled:hover, .kd-button-action.disabled:active {
+border: 1px solid #505050;
+background-color: #666;
+color: white;
+opacity: 0.5;
+-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+filter: alpha(opacity=50);
+-webkit-user-select: none;
+}
+
+.kd-button-submit.disabled, .kd-button-submit.disabled:hover, .kd-button-submit.disabled:active {
+border-color: #3079ED;
+background-color: #4D90FE;
+}

@@ -160,6 +160,9 @@ body {
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
       }
+      #buybutton.disabled {
+        box-shadow: none;
+      }
   #right {
     position: absolute;
     left: 50%;
@@ -172,36 +175,55 @@ body {
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ACACAC;
-    padding-left: 10px;
+    padding: 15px 15px 15px 25px;
+    -webkit-transition: left 1s;
   }
-    #visa {
-      width: 200px;
-      height: 133px;
-      margin: 15px auto;
-      background: url('visa.png') no-repeat;
-      background-size: contain;
+    #right h3 {
+      padding-left: 15px;
+      background: url('lock.png') no-repeat 3px 3px;
+      margin-bottom: 5px;
     }
+  
+  #config {
+    border-radius: 15px;
+    padding: 15px;
+    background: #fff;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
 $(function() {
   $('#button').click(function() {
-    $('#buyflow').show();
+    $('#right').css('left', '15%');
+    $('#buyflow').show('fast', function() {
+      if ($('input:radio[name=loggedin]:checked').val() != 'true') {
+        slideOut();
+      }
+    });
   });
   $('#buybg').click(function() {
-    $('#buyflow').hide();
+    $('#buyflow').hide('fast');
   });
 });
+
+function slideIn() {
+  $('#right').css('left', '15%');
+}
+function slideOut() {
+  $('#right').css('left', '50%');
+}
 </script>
 </head>
 
 <body>
-<ul>
-<li>• Base</li>
-<li>• <a href='index_01_not_logged_in.html'>Not Logged In</a></li>
-<li>• <a href='index_02_logged_in.html'>Logged In</a></li>
-</ul>
 <div id="main">
+  <div id="config">
+    <input type="radio" name="loggedin" value="true" checked> Logged in <br /> 
+    <input type="radio" name="loggedin" value="false"> Not Logged in <br />
+  </div>
   <div id="button"></div>
 </div>
 <div id="buyflow">
@@ -230,10 +252,13 @@ $(function() {
           </div>
         </div>
       </div>
-      <div id="buybutton" class="kd-button kd-button-submit">Buy Now</div>
+      <div id="buybutton" class="kd-button kd-button-submit disabled">Buy Now</div>
     </div>
     <div id="right">
-      Info
+      <h3>Security Check Required</h3>
+      <p>
+        We need to log you into Google to ensure your security. We'll open a window to do that in 3... 2... 1...
+      </p>
     </div>
   </div>
 </div>
