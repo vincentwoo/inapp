@@ -56,10 +56,12 @@ body {
   opacity: .5;
   z-index: 1;
 }
-.butter {
-  background: #F9EDBE;
+#butter {
+  background: #F9EDBE url('gwallet_full.png') no-repeat 5px 0;
+  background-size: contain;
   border-bottom: 1px solid #DDD8C0;
   border-top-left-radius: 15px;
+  height: 40px;
 }
 #frame {
   width: 650px;
@@ -119,7 +121,7 @@ body {
           font-weight: normal;
           position: absolute;
           top: 5px;
-          left: 7px;
+          left: 114px;
         }
         #dollar {
           font-size: 25px;
@@ -164,8 +166,7 @@ body {
   #right {
     position: absolute;
     left: 50%;
-    top: 30px;
-    bottom: 30px;
+    top: 50px;
     width: 250px;
     z-index: 4;
     background: url('exclusive_paper.png');
@@ -181,6 +182,33 @@ body {
       background: url('lock.png') no-repeat 3px 3px;
       margin-bottom: 5px;
     }
+    #notlogged {
+      display: none;
+    }
+    #cardedit {
+      //display: none;
+    }
+      .card {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 159px;
+        height: 100px;
+        margin: 0 auto;
+        background: transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+      #addcard {
+        background-image: url('visa_add.png');
+      }
+        #addcard p {
+          position: absolute;
+          display: block;
+          top: 10px;
+          padding: 10px;
+          font-weight: bold;
+          background: rgba(255,255,255, 0.9);
+        }
   
   #config {
     border-radius: 15px;
@@ -195,15 +223,21 @@ body {
 <script>
 $(function() {
   $('#button').click(function() {
+    var state = $('input:radio[name=state]:checked').val();
     $('#right').css('left', '15%');
-    $('#buyflow').show('fast', function() {
-      if ($('input:radio[name=loggedin]:checked').val() != 'true') {
+    $('#notlogged').hide();
+    $('#cardedit').hide();
+    if (state == 'notlogged') $('#notlogged').show();
+    else if (state == 'newuser') $('#cardedit').show();
+    
+    $('#buyflow').fadeIn('fast', function() {
+      if (state != 'logged') {
         slideOut();
       }
     });
   });
   $('#buybg').click(function() {
-    $('#buyflow').hide('fast');
+    $('#buyflow').fadeOut('fast');
   });
 });
 
@@ -219,8 +253,10 @@ function slideOut() {
 <body>
 <div id="main">
   <div id="config">
-    <input type="radio" name="loggedin" value="true" checked> Logged in <br /> 
-    <input type="radio" name="loggedin" value="false"> Not Logged in <br />
+    <input type="radio" name="state" value="logged" checked> Logged in <br /> 
+    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
+    <input type="radio" name="state" value="newuser"> New user <br />
+    
   </div>
   <div id="button"></div>
 </div>
@@ -228,9 +264,7 @@ function slideOut() {
   <div id="buybg"></div>
   <div id="frame">
     <div id="left">
-      <div class="butter">
-        <img src='gwallet_full.png' height='38' />
-      </div>
+      <div id="butter"></div>
       <div id="iteminfo">
         <img src="eagle.png" />
         <b>A Mighty Eagle</b>
@@ -241,22 +275,37 @@ function slideOut() {
       </div>
       <div id="sellerinfo">
         <div id="total">
+          <div id="subtotals">
+             <span id="subtotal">subtotal <b>1.99</b></span>
+             <span id="taxes">taxes <b>0.13</b></span>
+           </div>
           <span id="totallabel">total</span>
           <span id="dollar">$</span>
           2.12
-          <div id="subtotals">
-            <span id="subtotal">subtotal <b>1.99</b></span>
-            <span id="taxes">taxes <b>0.13</b></span>
-          </div>
+ 
         </div>
       </div>
       <div id="buybutton" class="kd-button kd-button-submit disabled">Buy Now</div>
     </div>
     <div id="right">
-      <h3>Security Check Required</h3>
-      <p>
-        We need to log you into Google to ensure your security. We'll open a window to do that in 3... 2... 1...
-      </p>
+      <div id="notlogged">
+        <h3>Security Check Required</h3>
+        <p>
+          We need to log you into Google to ensure your security. We'll open a window to do that in 3... 2... 1...
+        </p>
+        <div class="kd-button kd-button-submit" style="float: right; margin: 10px">Log In</div>
+      </div>
+      <div id="cardedit">
+        <div id="carousel">
+          <div id="addcard" class="card">
+            <p>
+              You need to add a card to your account.
+            </p>
+            <div id="addinstrument" class="kd-button">Add a new card</div>
+          </div>
+          
+        </div>
+      </div>
     </div>
   </div>
 </div>
