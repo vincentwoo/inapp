@@ -62,11 +62,10 @@ body {
   padding: 15px;
   padding-bottom: 10px;
   border-top-left-radius: 15px;
-  
 }
 #frame {
   width: 650px;
-  height: 315px;
+  height: 330px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -74,21 +73,19 @@ body {
   left: 50%;
   z-index: 2;
   overflow: hidden;
-  border-bottom-left-radius: 15px;
-  border-top-left-radius: 15px;
-  
-  background: #fff;
-  border: 1px solid #ACACAC;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
   #left {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
     width: 50%;
-    height: 100%;
-    border-right: 1px solid #ccc;
+    border: 1px solid #ACACAC;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    background: #fff;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
   }
     #iteminfo {
       border-bottom: 1px solid #ccc;
@@ -165,12 +162,17 @@ body {
       }
   #right {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 50%;
-    height: 500px;
-    z-index: -1;
+    left: 50%;
+    top: 30px;
+    bottom: 30px;
+    width: 250px;
+    z-index: 4;
     background: url('exclusive_paper.png');
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ACACAC;
+    padding-left: 10px;
   }
     #visa {
       width: 200px;
@@ -226,7 +228,7 @@ $(function() {
       <div id="buybutton" class="kd-button kd-button-submit">Buy Now</div>
     </div>
     <div id="right">
-      <div id="visa"></div>
+      Info
     </div>
   </div>
 </div>
