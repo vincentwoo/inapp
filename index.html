@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Displeased Avians</title>
+<link rel=stylesheet href="kennedy.css" type="text/css">
 <style>
 a, a:link {
   color: #1155CC;
@@ -60,10 +61,12 @@ body {
   border-bottom: 1px solid #DDD8C0;
   padding: 15px;
   padding-bottom: 10px;
+  border-top-left-radius: 15px;
+  
 }
 #frame {
   width: 650px;
-  height: 350px;
+  height: 315px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -71,12 +74,12 @@ body {
   left: 50%;
   z-index: 2;
   overflow: hidden;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
   
   background: #fff;
   border: 1px solid #ACACAC;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
   #left {
     position: absolute;
@@ -101,8 +104,6 @@ body {
     #sellerinfo {
       padding: 10px 15px 5px 15px;
       border-bottom: 1px solid #ccc;
-      -webkit-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
-      -moz-box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
       box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
       height: 65px;
       background: #F1F1F1 url('logo_rovio.png') no-repeat center right;
@@ -152,6 +153,16 @@ body {
           position: absolute;
           bottom: 0;
         }
+      #buybutton {
+        margin: 15px 30px;
+        display: block;
+        height: 40px;
+        font-size: 2em;
+        padding-top: 4px;
+        border-radius: 8px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
+      }
   #right {
     position: absolute;
     right: 0;
@@ -212,6 +223,7 @@ $(function() {
           </div>
         </div>
       </div>
+      <div id="buybutton" class="kd-button kd-button-submit">Buy Now</div>
     </div>
     <div id="right">
       <div id="visa"></div>
