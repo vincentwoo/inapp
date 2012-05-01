@@ -65,7 +65,7 @@ body {
 }
 #frame {
   width: 650px;
-  height: 360px;
+  height: 330px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -199,8 +199,8 @@ $(function() {
 <ul>
 <li>• <a href='index.html'>Base</a></li>
 <li>• <a href='index_01_not_logged_in.html'>Not Logged In</a></li>
-<li>• Logged In</li>
-<li>• <a href='index_03_no_instrument.html'>No Instrument</a></li>
+<li>• No Instrument</li>
+<li>• <a href='index_03_logged_in.html'>Logged In</a></li>
 </ul>
 <div id="main">
   <div id="button"></div>
@@ -220,9 +220,6 @@ $(function() {
         </p>
         <div style="clear:both"></div>
       </div>
-        <div style='text-align: right; color: #777; padding-top: 3px; margin-right: 5px;'>
-            <img src='mc_logo.png'> -0484
-        </div>
       <div id="sellerinfo">
         <div id="total">
           <div id="subtotals">
@@ -234,22 +231,22 @@ $(function() {
           2.12
         </div>
       </div>
-      <div id="buybutton" class="kd-button kd-button-submit"><img src='goowallet_logo_01.png' height='25'> Buy Now</div>
+      <div id="buybutton" class="kd-button kd-button-submit"><img src='gwallet_icon.png' style='border: 1px solid #aaa; background-color: #ccc;' height='25'> Buy Now</div>
     </div>
-        <!--
     <div id="right">
-        <div style='padding-top: 60px; padding-left: 5px;'>
+        <img src='cards.png'  style='padding-left: 50px; margin-top: 30px; margin-bottom: -20px;' />
+        <div style='padding-top: 20px; padding-left: 5px;'>
             <div style='padding: 5px 0px -1px 5px; float: left;'>
-                <img src='security_lock.png' width='24' height='24' />
+                <img src='warning_icon.gif' width='24' height='24' />
             </div>
             <div style='padding: 5px 0px 0px 5px; float: left; margin-bottom: 10px;'>
-                <span style='font-size: 16px; font-weight: bold;'>Security Check Required</span>
+                <span style='font-size: 16px; font-weight: bold;'>Payment Method Required</span>
             </div>
         </div>
-        <div style='padding: 0px 5px 0px 5px;'>Making this purchase requires being logged into Google Wallet.  We have added this step as an extra security measure, to help ensure that nobody but you is making a purchase with your account.
+        <div style='padding: 0px 5px 0px 5px;'>Making this purchase requires having payment information stored in Google Wallet.  Click below to open a new window where you can securely add your payment information.
         </div>
+      <div id="buybutton" class="kd-button kd-button-submit"><img src='gwallet_icon.png' style='border: 1px solid #aaa; background-color: #ccc;' height='25'> Add Card</div>
   </div>
-        -->
 </div>
 </body>
 </html>
