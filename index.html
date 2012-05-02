@@ -13,6 +13,7 @@ $(function() {
     $('#right').css('left', '15%');
     $('#notlogged').hide();
     $('#cardedit').hide();
+    $('#cardchange').hide();
     if (state == 'notlogged') $('#notlogged').show();
     else if (state == 'newuser') $('#cardedit').show();
     
@@ -21,7 +22,8 @@ $(function() {
         slideOut();
         $('#buybutton').addClass('disabled');
       } else {
-        $('#notlogged').show();
+        $('#cardedit').show();
+        $('#cardchange').show();
         $('#buybutton').removeClass('disabled');
       }
     });
@@ -66,11 +68,11 @@ function slideOut() {
         <p>
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
-        <div style="clear:both"></div>
-        <div style="margin-top:10px">
+        <div style="float: right">
           Sold by <b>Rovio</b>
           <img src="logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
+        <div style="clear:both"></div>
       </div>
       <div id="sellerinfo">
         <div id="cost">

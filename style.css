@@ -60,7 +60,7 @@ body {
 }
 #frame {
   width: 650px;
-  height: 361px;
+  height: 332px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -83,7 +83,7 @@ body {
   }
     #iteminfo {
       border-bottom: 1px solid #ccc;
-      padding: 15px;
+      padding: 15px 15px 10px 15px;
     }
       #itemimage {
         width: 100px;
