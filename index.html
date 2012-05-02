@@ -226,7 +226,7 @@ $(function() {
     var state = $('input:radio[name=state]:checked').val();
     $('#right').css('left', '15%');
     $('#notlogged').hide();
-    $('#cardedit').show();
+    $('#cardedit').hide();
     if (state == 'notlogged') $('#notlogged').show();
     else if (state == 'newuser') $('#cardedit').show();
     
@@ -235,6 +235,7 @@ $(function() {
         slideOut();
         $('#buybutton').addClass('disabled');
       } else {
+        $('#notlogged').show();
         $('#buybutton').removeClass('disabled');
       }
     });
