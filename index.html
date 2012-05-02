@@ -61,12 +61,13 @@ body {
   background: #F9EDBE url('gwallet_full.png') no-repeat 5px 0;
   background-size: contain;
   border-bottom: 1px solid #DDD8C0;
-  border-top-left-radius: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   height: 40px;
 }
 #frame {
   width: 650px;
-  height: 330px;
+  height: 297px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -85,8 +86,7 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     z-index: 5;
     background: #fff;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-radius: 8px;
   }
     #iteminfo {
       border-bottom: 1px solid #ccc;
@@ -152,14 +152,16 @@ body {
           bottom: 0;
         }
       #buybutton {
-        margin: 15px 30px;
         display: block;
         height: 40px;
         font-size: 2em;
         padding-top: 4px;
         border-radius: 8px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
+        color: #fff;
       }
       #buybutton:active {
       	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0px 1px 2px rgba(0,0,0,0.3);
