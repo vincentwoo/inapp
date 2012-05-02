@@ -226,13 +226,16 @@ $(function() {
     var state = $('input:radio[name=state]:checked').val();
     $('#right').css('left', '15%');
     $('#notlogged').hide();
-    $('#cardedit').hide();
+    $('#cardedit').show();
     if (state == 'notlogged') $('#notlogged').show();
     else if (state == 'newuser') $('#cardedit').show();
     
     $('#buyflow').fadeIn('fast', function() {
       if (state != 'logged') {
         slideOut();
+        $('#buybutton').addClass('disabled');
+      } else {
+        $('#buybutton').removeClass('disabled');
       }
     });
   });
@@ -285,7 +288,7 @@ function slideOut() {
  
         </div>
       </div>
-      <div id="buybutton" class="kd-button kd-button-submit disabled">Buy Now</div>
+      <div id="buybutton" class="kd-button kd-button-submit">Buy Now</div>
     </div>
     <div id="right">
       <div id="notlogged">
