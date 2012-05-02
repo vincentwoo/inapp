@@ -67,7 +67,7 @@ body {
 }
 #frame {
   width: 650px;
-  height: 297px;
+  height: 342px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
@@ -92,7 +92,7 @@ body {
       border-bottom: 1px solid #ccc;
       padding: 15px;
     }
-      #iteminfo img {
+      #itemimage {
         width: 100px;
         height: 100px;
         margin-right: 10px;
@@ -104,7 +104,7 @@ body {
       border-bottom: 1px solid #ccc;
       box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
       height: 65px;
-      background: #F1F1F1 url('logo_rovio.png') no-repeat center right;
+      background: #F1F1F1;
       background-size: contain;
     }
       #total {
@@ -185,7 +185,7 @@ body {
   }
     #right h3 {
       padding-left: 15px;
-      background: url('lock.png') no-repeat 3px 3px;
+      background: url('lock.png') no-repeat 3px 6px;
       margin-bottom: 5px;
     }
     #notlogged {
@@ -276,12 +276,16 @@ function slideOut() {
     <div id="left">
       <div id="butter"></div>
       <div id="iteminfo">
-        <img src="eagle.png" />
+        <img id="itemimage" src="eagle.png" />
         <b>A Mighty Eagle</b>
         <p>
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
         <div style="clear:both"></div>
+        <div style="margin-top:10px">
+          Sold by <b>Rovio</b>
+          <img src="logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
+        </div>
       </div>
       <div id="sellerinfo">
         <div id="total">
