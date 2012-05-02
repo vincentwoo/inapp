@@ -1,0 +1,196 @@
+a, a:link {
+  color: #1155CC;
+  text-decoration: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+body {
+  background: #e4f8fc url('bgimage.png') center top no-repeat;
+  font: 13px/18px Arial;
+  color: #222;
+}
+#main {
+  width: 1028px;
+  height: 772px;
+  background: url('angrybirds.png');
+  margin: 150px auto 0 auto;
+  position: relative;
+}
+#button {
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  bottom: 150px;
+  right: 212px;
+  cursor: pointer;
+}
+#buyflow {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  //display: none;
+}
+#buybg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .5;
+  z-index: 1;
+}
+#butter {
+  background: #F9EDBE url('gwallet_full.png') no-repeat 5px 0;
+  background-size: contain;
+  border-bottom: 1px solid #DDD8C0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 40px;
+}
+#frame {
+  width: 650px;
+  height: 361px;
+  position: absolute;
+  margin-top: -175px;
+  margin-left: -325px;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  overflow: hidden;
+}
+  #left {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 50%;
+    border: 1px solid #ACACAC;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    background: #fff;
+    border-radius: 8px;
+  }
+    #iteminfo {
+      border-bottom: 1px solid #ccc;
+      padding: 15px;
+    }
+      #itemimage {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        float: left;
+      }
+    #sellerinfo {
+      padding: 10px 15px 5px 15px;
+      border-bottom: 1px solid #ccc;
+      box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+      height: 85px;
+      background: #F1F1F1;
+      background-size: contain;
+    }
+      #cost {
+        width: 50%;
+        font-size: 15px;
+        float: left;
+        position: relative;
+      }
+        #cost span {
+          display: block;
+          text-align: left;
+        }
+          #cost span b {
+            float: right;
+          }
+        #total b {
+          font-size: 30px;
+          line-height: 30px;
+        }
+      #cardchange {
+        float: right;
+        margin-top:15px;
+      }
+      #buybutton {
+        display: block;
+        height: 40px;
+        font-size: 2em;
+        padding-top: 4px;
+        border-radius: 8px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
+        color: #fff;
+      }
+      #buybutton:active {
+      	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0px 1px 2px rgba(0,0,0,0.3);
+      }
+      #buybutton.disabled {
+        box-shadow: none;
+      }
+  #right {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    width: 250px;
+    z-index: 4;
+    background: url('exclusive_paper.png');
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ACACAC;
+    padding: 15px 15px 15px 25px;
+    -webkit-transition: left 1s;
+  }
+    #right h3 {
+      padding-left: 15px;
+      background: url('lock.png') no-repeat 3px 6px;
+      margin-bottom: 5px;
+    }
+    #notlogged {
+      display: none;
+    }
+    #cardedit {
+      //display: none;
+    }
+      .card {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 159px;
+        height: 100px;
+        margin: 0 auto;
+        background: transparent;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+      #addcard {
+        background-image: url('visa_add.png');
+      }
+        #addcard p {
+          position: absolute;
+          display: block;
+          top: 10px;
+          padding: 10px;
+          font-weight: bold;
+          background: rgba(255,255,255, 0.9);
+        }
+  
+  #config {
+    border-radius: 15px;
+    padding: 15px;
+    background: #fff;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+  }
