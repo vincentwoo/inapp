@@ -164,17 +164,16 @@ body {
     #cardedit {
       //display: none;
     }
-      .card {
+
+      #addcard {
         background-size: contain;
         background-repeat: no-repeat;
-        width: 159px;
-        height: 100px;
-        margin: 0 auto;
-        background: transparent;
+        width: 200px;
+        height: 125px;
+        border-radius: 10px;
+        margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         position: relative;
-      }
-      #addcard {
         background-image: url('visa_add.png');
       }
         #addcard p {
@@ -184,6 +183,12 @@ body {
           padding: 10px;
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
+        }
+        #addinstrument {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 5;
         }
   
   #config {
