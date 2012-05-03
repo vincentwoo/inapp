@@ -135,6 +135,9 @@ body {
         margin-top:15px;
         font-size: 14px;
       }
+     .cardarrow_box {
+        display: inline-block;
+      }
       #buybutton {
         display: block;
         height: 40px;
