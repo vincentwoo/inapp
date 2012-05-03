@@ -92,7 +92,7 @@ function start () {
   if (state == 'newuser') $('#newuser').show();
   
   $('#buyflow').fadeIn('fast', function() {
-    if (state != 'logged_one' && state != 'logged_multi') {
+    if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line') {
       slideOut();
       $('#buybutton').addClass('disabled');
     } else {
@@ -158,6 +158,7 @@ function scrollTo(current, target) {
 <body>
 <div id="main">
   <div id="config">
+    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item<br /> 
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
     <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
@@ -172,7 +173,19 @@ function scrollTo(current, target) {
       <div id="butter">
         <img src="images/x_close.gif" id="close" />
       </div>
-      <div id="iteminfo">
+      <div id="iteminfo_one">
+        <img id="itemimage" src="images/eagle.png" />
+        <b>A Mighty Eagle</b>
+        <p>
+          A mighty eagle decimates your enemies with deadly precision - buy one today.
+        </p>
+        <div style="float: right">
+          Sold by <b>Rovio</b>
+          <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
+        </div>
+        <div style="clear:both"></div>
+      </div>
+      <div id="iteminfo_multi">
         <img id="itemimage" src="images/eagle.png" />
         <b>A Mighty Eagle</b>
         <p>

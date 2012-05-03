@@ -91,9 +91,14 @@ body {
     background: #fff;
     border-radius: 8px;
   }
-    #iteminfo {
+    #iteminfo_one {
       border-bottom: 1px solid #ccc;
       padding: 15px 15px 10px 15px;
+    }
+    #iteminfo_multi {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 15px 10px 15px;
+      display: none;
     }
       #itemimage {
         width: 100px;
