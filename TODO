@@ -1,0 +1,10 @@
+- Expired/non-functional/zero-balance cards
+- Stored value cards
+- Google Wallet account
+- Any other supported instruments
+- Flexible merchant logo area (support for no logo)
+- Flexible item image area (support for no logo)
+- Multi line item
+- Multi quantity
+- Pop back into iframe
+- *** vs xxx on first part of CC numbers
