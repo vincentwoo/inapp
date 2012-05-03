@@ -62,6 +62,11 @@ $(function() {
     open('addinstrument.html', 'addinstrument',
          'resizable=yes, scrollbars=yes, status=no, width=579, height=468');
   });
+
+  $('.loginbutton').click(function() {
+    open('login.html', 'login',
+         'resizable=yes, scrollbars=yes, status=no, width=577, height=439');
+  });
 });
 
 function slideToggle() {
@@ -80,6 +85,10 @@ function slideOut() {
 
 function addInstrumentDone() {
   
+}
+
+function loginDone() {
+
 }
 </script>
 </head>
@@ -135,7 +144,7 @@ function addInstrumentDone() {
         <p>
           To ensure your security, you must log in to Google Wallet.<br /><br />Please click the button below to log in.
         </p>
-        <div class="kd-button kd-button-submit" style="float: right; margin: 10px">Log In in a new window</div>
+        <div class="kd-button kd-button-submit loginbutton" style="float: right; margin: 10px">Log In in a new window</div>
       </div>
       
       <div id="newuser">

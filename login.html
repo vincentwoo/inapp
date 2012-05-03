@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Log In</title>
+<body style="background: url('images/loginpopup.png') no-repeat">
+<script>
+document.onclick = function() {
+  var win = window.opener;
+  if (win && !win.closed) {
+    win.loginDone();
+  }
+  window.close();
+}
+</script>
+</body>
+</html>
