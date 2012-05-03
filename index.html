@@ -10,7 +10,7 @@
 $(function() {
   $('#button').click(function() {
     var state = $('input:radio[name=state]:checked').val();
-    $('#right').css('left', '8%');
+    slideIn();
     $('#email').hide();
     $('#notlogged').hide();
     $('#newuser').hide();
@@ -65,9 +65,11 @@ function slideToggle() {
 
 function slideIn() {
   $('#right').css('left', '8%');
+  $('#cardchange').removeClass('active');
 }
 function slideOut() {
   $('#right').css('left', '50%');
+  $('#cardchange').addClass('active');
 }
 </script>
 </head>
@@ -156,7 +158,7 @@ function slideOut() {
         </div>
       </div>
       
-      <div id="showinstruments_multi" style="display:block;">
+      <div id="showinstruments_multi">
         <ul class='instrument_list'>
             <li class="selected" card_type='master' card_num='9998'>
                 <div class='card_image'>
