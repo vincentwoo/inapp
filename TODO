@@ -6,5 +6,17 @@
 - Flexible item image area (support for no logo)
 - Multi line item
 - Multi quantity
-- Pop back into iframe
+- Pop back into iframe functionality from popups (login & add instrument)
 - *** vs xxx on first part of CC numbers
+- Find way to make change instrument button look more change-y
+- Plus icon/image on "Add New" on multi-instrument selector
+- A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
+- Spinner?  (Different design spinner?)
+- Figure out how to make instrument selector scroll when > 4 instruments (twitter/fb/etc-style "v" and "^" buttons to scroll by 2, 3, 4 instruments at a time?)
+- "X" close in top-right of main frame
+- GAIA email or photo anywhere?
+- Remove taxes line if 0.00 taxes?
+- Remove subtotal line if 0.00 taxes?
+- Deal with item descriptions that are longer than fits in the current box
+- Deal with item names that are longer than fits in the current box
+
