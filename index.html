@@ -8,35 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
-  $('#button').click(function() {
-    var state = $('input:radio[name=state]:checked').val();
-    slideIn();
-    $('#email').hide();
-    $('#notlogged').hide();
-    $('#newuser').hide();
-    $('#cardchange').hide();
-    $('#showinstruments_one').hide();
-    $('#showinstruments_multi').hide();
-
-    if (state == 'notlogged') $('#notlogged').show();
-    else $('#email').show();
-    if (state == 'newuser') $('#newuser').show();
-    
-    $('#buyflow').fadeIn('fast', function() {
-      if (state != 'logged_one' && state != 'logged_multi') {
-        slideOut();
-        $('#buybutton').addClass('disabled');
-      } else {
-        if (state == 'logged_one') {
-          $('#showinstruments_one').show();
-        } else {
-          $('#showinstruments_multi').show();
-        }
-        $('#cardchange').show();
-        $('#buybutton').removeClass('disabled');
-      }
-    });
-  });
+  $('#button').click(start);
 
   $('#buybg, #close').click(function() {
     $('#buyflow').fadeOut('fast');
@@ -67,7 +39,40 @@ $(function() {
     open('login.html', 'login',
          'resizable=yes, scrollbars=yes, status=no, width=577, height=439');
   });
+  
+  setTimeout(start, 500);
 });
+
+function start () {
+  var state = $('input:radio[name=state]:checked').val();
+  slideIn();
+  $('#email').hide();
+  $('#notlogged').hide();
+  $('#newuser').hide();
+  $('#cardchange').hide();
+  $('#showinstruments_one').hide();
+  $('#showinstruments_multi').hide();
+
+  if (state == 'notlogged') $('#notlogged').show();
+  else $('#email').show();
+  if (state == 'newuser') $('#newuser').show();
+  
+  $('#buyflow').fadeIn('fast', function() {
+    if (state != 'logged_one' && state != 'logged_multi') {
+      slideOut();
+      $('#buybutton').addClass('disabled');
+    } else {
+      if (state == 'logged_one') {
+        $('#showinstruments_one').show();
+        $('#right').css('height', '259px');
+      } else {
+        $('#showinstruments_multi').show();
+      }
+      $('#cardchange').show();
+      $('#buybutton').removeClass('disabled');
+    }
+  });
+}
 
 function slideToggle() {
   if ($('#right').css('left') == '8%') slideOut();
@@ -84,7 +89,16 @@ function slideOut() {
 }
 
 function addInstrumentDone() {
-  
+  if ($('#showinstruments_one').is(':visible')) {
+    var right = $('#right');
+    right.css('-webkit-transition-property', 'height, left');
+    $('#showinstruments_multi').show();
+    $('#showinstruments_multi').css('height', '240px');
+    right.animate({
+      scrollTop: 255
+    }, 1000);
+    right.css('-webkit-transition-property', 'left');
+  }
 }
 
 function loginDone() {
@@ -96,8 +110,8 @@ function loginDone() {
 <body>
 <div id="main">
   <div id="config">
-    <input type="radio" name="state" value="logged_multi" checked> Logged in (n instruments)<br /> 
-    <input type="radio" name="state" value="logged_one"> Logged in (1 instrument)<br /> 
+    <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
+    <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
     <input type="radio" name="state" value="newuser"> New user <br />
   </div>
@@ -158,6 +172,7 @@ function loginDone() {
             Add card in a new window
           </div>
         </div>
+
       </div>
 
       <div id="showinstruments_one">
@@ -173,11 +188,12 @@ function loginDone() {
         <p style="clear:both">
           You currently have only one valid payment method stored in your Google Wallet.  To add another, click the button below.
         </p>
-        <div class="kd-button addcardbutton" style="float:right; margin: 0">
+        <div class="kd-button addcardbutton" style="float:right; margin-bottom: 20px">
           <div>
             Add card in a new window
           </div>
         </div>
+        <div style="clear: both"></div>
       </div>
       
       <div id="showinstruments_multi">

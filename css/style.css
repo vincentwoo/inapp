@@ -159,13 +159,15 @@ body {
     top: 50px;
     width: 290px;
     z-index: 4;
+    overflow: hidden;
     background: #eee url('../images/exclusive_paper.png');
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ACACAC;
     padding: 15px 15px 15px 25px;
-    -webkit-transition: left 1s;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-property: left;
   }
     #email {
       position: absolute;
