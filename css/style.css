@@ -288,7 +288,7 @@ ul.instrument_list {
     cursor: default;
 }
 
-li.selected, .instrument_list li:hover {
+li.selected, .instrument_list li.card_line:hover {
     background: #ddd;
     filter:alpha(opacity=100);
     opacity:1.0;
@@ -318,6 +318,13 @@ div.card_details {
     display: block;
 }
 
-div.expired {
+div.card_expire {
+    padding-left: 5px;
+    float: left;
+    margin-top: -4px;
+    display: block;
+}
+
+div.card_expired {
     color: #f44;
 }
