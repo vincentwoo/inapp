@@ -2,45 +2,66 @@
 <html>
 <head>
 <title>Displeased Avians</title>
-<link rel="stylesheet" href="kd_components.css" type="text/css" media="screen" charset="utf-8">
-<link rel="stylesheet" href="kd_components_google.css" type="text/css" media="screen" charset="utf-8">
-<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/kd_components.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/kd_components_google.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
   $('#button').click(function() {
     var state = $('input:radio[name=state]:checked').val();
-    $('#right').css('left', '15%');
+    $('#right').css('left', '8%');
     $('#notlogged').hide();
     $('#newuser').hide();
     $('#cardchange').hide();
+    $('#showinstruments_one').hide();
+    $('#showinstruments_multi').hide();
+
     if (state == 'notlogged') $('#notlogged').show();
     else if (state == 'newuser') $('#newuser').show();
     
     $('#buyflow').fadeIn('fast', function() {
-      if (state != 'logged') {
+      if (state != 'logged_one' && state != 'logged_multi') {
         slideOut();
         $('#buybutton').addClass('disabled');
       } else {
-        $('#oneinstrument').show();
+        if (state == 'logged_one') {
+          $('#showinstruments_one').show();
+        } else {
+          $('#showinstruments_multi').show();
+        }
         $('#cardchange').show();
         $('#buybutton').removeClass('disabled');
       }
     });
   });
+
   $('#buybg').click(function() {
     $('#buyflow').fadeOut('fast');
   });
+
   $('#cardchange').click(slideToggle);
+
+  $('.single_instrument').click(function() {
+    $('.single_instrument').removeClass('selected');
+    $(this).addClass('selected');
+    if (($(this).attr("card_type") == "visa" ||
+         $(this).attr("card_type") == "master" ||
+         $(this).attr("card_type") == "discover" ||
+         $(this).attr("card_type") == "amex") &&
+        ($(this).attr("card_num").length == 4)) {
+      $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
+    }
+  });
 });
 
 function slideToggle() {
-  if ($('#right').css('left') == '15%') slideOut();
+  if ($('#right').css('left') == '8%') slideOut();
   else slideIn();
 }
 
 function slideIn() {
-  $('#right').css('left', '15%');
+  $('#right').css('left', '8%');
 }
 function slideOut() {
   $('#right').css('left', '50%');
@@ -51,8 +72,8 @@ function slideOut() {
 <body>
 <div id="main">
   <div id="config">
-    <input type="radio" name="state" value="logged" checked> Logged in with one card<br />
-    <input type="radio" name="state" value="multicard"> Logged in with multiple cards<br />
+    <input type="radio" name="state" value="logged_multi" checked> Logged in (n instruments)<br /> 
+    <input type="radio" name="state" value="logged_one"> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
     <input type="radio" name="state" value="newuser"> New user <br />
   </div>
@@ -64,14 +85,14 @@ function slideOut() {
     <div id="left">
       <div id="butter"></div>
       <div id="iteminfo">
-        <img id="itemimage" src="eagle.png" />
+        <img id="itemimage" src="images/eagle.png" />
         <b>A Mighty Eagle</b>
         <p>
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
         <div style="float: right">
           Sold by <b>Rovio</b>
-          <img src="logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
+          <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
         <div style="clear:both"></div>
       </div>
@@ -83,7 +104,7 @@ function slideOut() {
         </div>
 
         <a class="kd-button" id="cardchange">
-          <img src='cc_master.png'> ***-0484 &#187;
+          <img src='images/cc_amex.png'> ***-1312 &#187;
         </a>
 
       </div>
@@ -102,17 +123,76 @@ function slideOut() {
           <p>
             You need to add a card to your account.
           </p>
-          <div id="addcardbutton" class="kd-button">+ Add a new card</div>
+          <div class="kd-button addcardbutton"
+              style="position: absolute; bottom: 0; right: 0; z-index: 5;">
+            + Add a new card
+          </div>
         </div>
         We'll launch a window to add a card to your account shortly, but feel free to hit the button above if it doesn't come up.
       </div>
-      <div id="oneinstrument" style="display:block">
+
+      <div id="showinstruments_one">
         <div id="bigcard">
-          <img src="mc_logo.png" />
+          <img src="images/mc_logo.png" />
           **** **** **** 0484
           <br />
           Vincent Woo
         </div>
+        <div class="kd-button addcardbutton" style="float:right; margin: 10px">
+          + Add a new card
+        </div>
+        <p style="clear:both">
+          You currently can pay only with the one card you have in your account. To add a different one, hit the button.
+        </p>
+      </div>
+      <div id="showinstruments_multi" style="display:block;">
+        <ul class='instrument_list'>
+            <li class='single_instrument' card_type='master' card_num='9998'>
+                <div class='card_image'>
+                    <img src='images/cc_master.png' />
+                </div>
+                <div class='card_details'>
+                    MasterCard ***-9998
+                </div>
+                <div style='clear: both;'>
+            </li>
+            <li class='single_instrument' card_type='visa' card_num='3431'>
+                <div class='card_image'>
+                    <img src='images/cc_visa.png' />
+                </div>
+                <div class='card_details'>
+                    Visa ***-3431
+                </div>
+                <div style='clear: both;'>
+            </li>
+            <li class='single_instrument selected' card_type='amex' card_num='1312'>
+                <div class='card_image'>
+                    <img src='images/cc_amex.png' />
+                </div>
+                <div class='card_details'>
+                    American Express ***-1312
+                </div>
+                <div style='clear: both;'>
+            </li>
+            <li class='single_instrument' card_type='discover' card_num='9283'>
+                <div class='card_image'>
+                    <img src='images/cc_discover.png' />
+                </div>
+                <div class='card_details'>
+                    Discover ***-9283
+                </div>
+                <div style='clear: both;'>
+            </li>
+            <li class='add_instrument'>
+                <div class='card_image'>
+                    <img src='images/cc_visa.png' />
+                </div>
+                <div class='card_details'>
+                    Add New
+                </div>
+                <div style='clear: both;'>
+            </li>
+        </ul>
       </div>
     </div>
   </div>

@@ -13,14 +13,14 @@ html, body {
   position: absolute;
 }
 body {
-  background: #e4f8fc url('bgimage.png') center top no-repeat;
+  background: #e4f8fc url('../images/bgimage.png') center top no-repeat;
   font: 13px/18px Arial;
   color: #222;
 }
 #main {
   width: 1028px;
   height: 772px;
-  background: url('angrybirds.png');
+  background: url('../images/angrybirds.png');
   margin: 150px auto 0 auto;
   position: relative;
 }
@@ -51,7 +51,7 @@ body {
   z-index: 1;
 }
 #butter {
-  background: #F9EDBE url('gwallet_full.png') no-repeat 5px 0;
+  background: #F9EDBE url('../images/gwallet_full.png') no-repeat 5px 0;
   background-size: contain;
   border-bottom: 1px solid #DDD8C0;
   border-top-left-radius: 8px;
@@ -59,7 +59,7 @@ body {
   height: 40px;
 }
 #frame {
-  width: 650px;
+  width: 635px;
   height: 332px;
   position: absolute;
   margin-top: -175px;
@@ -147,9 +147,9 @@ body {
     position: absolute;
     left: 50%;
     top: 50px;
-    width: 250px;
+    width: 290px;
     z-index: 4;
-    background: #eee url('exclusive_paper.png');
+    background: #eee url('../images/exclusive_paper.png');
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -159,10 +159,11 @@ body {
   }
     #right h3 {
       padding-left: 15px;
-      background: url('lock.png') no-repeat 3px 6px;
+      background: url('../images/lock.png') no-repeat 3px 6px;
       margin-bottom: 5px;
     }
-    #notlogged, #newuser, #oneinstrument {
+
+    #notlogged, #newuser, #showinstruments_one, #showinstruments_multi {
       display: none;
     }
 
@@ -175,7 +176,7 @@ body {
         margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         position: relative;
-        background-image: url('visa_add.png');
+        background-image: url('../images/add_card_new.png');
       }
         #addcard p {
           position: absolute;
@@ -185,12 +186,32 @@ body {
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
         }
-        #addcardbutton {
+      #singlecard {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 125px;
+        margin-left: 40px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-image: url('../images/blank_card_new.png');
+      }
+        #singlecard p {
           position: absolute;
-          bottom: 0;
-          right: 0;
-          z-index: 5;
+          display: block;
+          text-align: center;
+          top: 35px;
+          width: 100%;
+          padding: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: bold;
+          background: rgba(255,255,255, 0.9) url('../images/check.png') no-repeat;
+          background-position: 0px 32px;
         }
+
     #bigcard {
       background: #fff;
       border-radius: 15px;
@@ -199,7 +220,7 @@ body {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       font-weight: bold;
       padding: 10px;
-      
+      margin: 0 auto 15px auto;
     }
       #bigcard img {
         margin: 0 10px 10px 0;
@@ -215,3 +236,58 @@ body {
     top: 200px;
     left: 200px;
   }
+
+ul.instrument_list {
+    list-style-type: none;
+}
+
+li.single_instrument, li.add_instrument {
+    padding: 5px 8px 5px 8px;
+    margin: 0;
+    margin-bottom: 5px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    vertical-align: middle;
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #aaa;
+    background-color: #ccc;
+    font-weight: bold;
+    filter:alpha(opacity=90);
+    opacity:.9;
+}
+
+li.selected, li.single_instrument:hover, li.add_instrument:hover {
+    padding: 3px 10px 3px 10px;
+    background-color: #ddd;
+    color: #222;
+    border: 2px solid #777;
+    filter:alpha(opacity=100);
+    opacity:1.0;
+}
+
+li.selected {
+    background: #ddd url('../images/check.png') left center no-repeat;
+    padding-left: 22px;
+}
+
+li.selected:hover {
+    background: #ddd url('../images/check.png') left center no-repeat;
+    padding-left: 22px;
+}
+
+div.card_image {
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 40px;
+    display: block;
+}
+
+div.card_details {
+    float: left;
+    margin-top: -4px;
+    display: block;
+}
