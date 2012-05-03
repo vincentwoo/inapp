@@ -97,19 +97,33 @@ function slideOut() {
 
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
-    var right = $('#right');
-    right.css('-webkit-transition-property', 'height, left');
-    $('#showinstruments_multi').show();
-    $('#showinstruments_multi').css('height', '240px');
-    right.animate({
-      scrollTop: 255
-    }, 1000);
-    right.css('-webkit-transition-property', 'left');
+    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'));
   }
 }
 
 function loginDone() {
 
+}
+
+function scrollTo(current, target) {
+  var right = $('#right');
+  right.css('-webkit-transition-property', 'height, left');
+  target.show();
+  console.log(target.css('height'));
+  target.css('height', right.outerHeight() + 'px');
+    console.log(target.css('height'));
+  right.animate({
+      scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
+    },
+    1000,
+    function () {
+      current.hide();
+      target.css('height', 'auto');
+      right.css('height', target.outerHeight());
+      setTimeout(function() {
+        right.css('-webkit-transition-property', 'left');
+      }, 1000);
+    });
 }
 </script>
 </head>
@@ -235,6 +249,7 @@ function loginDone() {
             Add card in a new window
           </div>
         </div>
+        <div style="clear:both"></div>
       </div>
     </div>
   </div>
