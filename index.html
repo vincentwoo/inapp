@@ -52,6 +52,7 @@ $(function() {
          $(this).attr("card_type") == "amex") &&
         ($(this).attr("card_num").length == 4)) {
       $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
+      slideIn();
     }
   });
 });
@@ -135,7 +136,7 @@ function slideOut() {
         <ul class='instrument_list'>
             <li class='add_instrument'>
                 <div class='card_image'>
-                    <img src='images/cc_visa.png' />
+                    <img src='images/plus_button_small.png' />
                 </div>
                 <div class='card_details'>
                     Add New Payment Method
@@ -184,10 +185,10 @@ function slideOut() {
             </li>
             <li class='add_instrument'>
                 <div class='card_image'>
-                    <img src='images/cc_visa.png' />
+                    <img src='images/plus_button_small.png' />
                 </div>
                 <div class='card_details'>
-                    Add New
+                    Add New Payment Method
                 </div>
                 <div style='clear: both;'>
             </li>
