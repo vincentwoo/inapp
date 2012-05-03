@@ -44,11 +44,10 @@ $(function() {
 
   $('#cardchange').click(slideToggle);
 
-  $('.instrument_list li.card_line').click(function() {
-    $('.instrument_list li.selected').addClass('card_line');
-    $('.instrument_list li.selected').removeClass('selected');
-    $(this).removeClass('card_line');
-    $(this).addClass('selected');
+  $('.instrument_list li').click(function() {
+    if ($(this).attr("class") == "expired") return;
+    $('.instrument_list li.card_line_selected').toggleClass('card_line_selected');
+    $(this).toggleClass('card_line_selected');
     if (($(this).attr("card_type") == "visa" ||
          $(this).attr("card_type") == "master" ||
          $(this).attr("card_type") == "discover" ||
@@ -165,24 +164,24 @@ function slideOut() {
       
       <div id="showinstruments_multi">
         <ul class='instrument_list'>
-            <li class="selected" card_type='master' card_num='9998'>
+            <li class="card_line_selected" card_type='master' card_num='9998'>
                 <div class='card_image'><img src='images/cc_master.png' /></div>
                 <div class='card_details'>***-9998</div>
                 <div class='card_expire'>(expires 11/13)</div>
             </li>
-            <li class='card_line' card_type='visa' card_num='3431'>
+            <li card_type='visa' card_num='3431'>
                 <div class='card_image'><img src='images/cc_visa.png' /></div>
                 <div class='card_details'>***-3431</div>
                 <div class='card_expire'>(expires 07/14)</div>
             </li>
-            <li class='card_line' card_type='amex' card_num='1312'>
+            <li card_type='amex' card_num='1312'>
                 <div class='card_image'><img src='images/cc_amex.png' /></div>
                 <div class='card_details'>***-1312</div>
                 <div class='card_expire'>(expires 02/15)</div>
             </li>
             <li class='expired' card_type='discover' card_num='9283' style="border: 0">
-                <div class='card_image'><img src='images/cc_discover.png' /></div>
-                <div class='card_details'>***-9283</div>
+                <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
+                <div class='card_details card_details_expired'>***-9283</div>
                 <div class='card_expire card_expired'>(expired 01/12)</div>
             </li>
         </ul>
