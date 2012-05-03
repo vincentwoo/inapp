@@ -192,7 +192,7 @@ body {
         margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         position: relative;
-        background-image: url('../images/add_card_new.png');
+        background-image: url('../images/blank_card_new.png');
       }
         #addcard p {
           position: absolute;
