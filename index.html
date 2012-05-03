@@ -42,7 +42,14 @@ $(function() {
     $('#buyflow').fadeOut('fast');
   });
 
-  $('#cardchange').click(slideToggle);
+  $('#cardchange').click(function() {
+    if ($('#right').css('left') == '8%') {
+        $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_flip.png');
+    } else {
+        $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
+    }
+    slideToggle();
+  });
 
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
@@ -53,7 +60,7 @@ $(function() {
          $(this).attr("card_type") == "discover" ||
          $(this).attr("card_type") == "amex") &&
         ($(this).attr("card_num").length == 4)) {
-      $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
+      $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />");
       setTimeout(slideIn, 250);
     }
   });
@@ -129,9 +136,13 @@ function loginDone() {
             <span id="total">total <b>$2.12</b></span>
         </div>
 
-        <a class="kd-button" id="cardchange">
-          <img src='images/cc_master.png'> ***-9998 &#187;
-        </a>
+        <div class="kd-button" id="cardchange">
+          <img src='images/cc_master.png' />
+          **-9998
+          <div class='cardarrow_box'>
+            <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />
+          </div>
+        </div>
 
       </div>
       <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>

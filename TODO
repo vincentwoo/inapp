@@ -5,7 +5,6 @@ i'm starring items i think are truly must-dos by demo time
 *- Multi line item
 *- Multi quantity
 *- Spinner?  (Different design spinner?)
-*- Stub popup functionality of add instrument & login
 *- Pop back into iframe functionality from popup stubs
 
 [done]- Plus icon/image on "Add New" on multi-instrument selector
@@ -13,6 +12,7 @@ i'm starring items i think are truly must-dos by demo time
 [done]- GAIA email or photo anywhere?
 [done]- Take out auto-window-opening stuff, would trigger popup blockers
 [done]- Expired cards
+[done]- Stub popup functionality of add instrument & login
 
 - Non-functional cards
 - Stored value cards
