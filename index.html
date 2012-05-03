@@ -12,17 +12,17 @@ $(function() {
     var state = $('input:radio[name=state]:checked').val();
     $('#right').css('left', '15%');
     $('#notlogged').hide();
-    $('#cardedit').hide();
+    $('#newuser').hide();
     $('#cardchange').hide();
     if (state == 'notlogged') $('#notlogged').show();
-    else if (state == 'newuser') $('#cardedit').show();
+    else if (state == 'newuser') $('#newuser').show();
     
     $('#buyflow').fadeIn('fast', function() {
       if (state != 'logged') {
         slideOut();
         $('#buybutton').addClass('disabled');
       } else {
-        $('#cardedit').show();
+        $('#showinstruments').show();
         $('#cardchange').show();
         $('#buybutton').removeClass('disabled');
       }
@@ -82,7 +82,7 @@ function slideOut() {
         </div>
 
         <a class="kd-button" id="cardchange">
-          <img src='mc_logo.png'> ***-0484 &#187;
+          <img src='cc_master.png'> ***-0484 &#187;
         </a>
 
       </div>
@@ -96,14 +96,17 @@ function slideOut() {
         </p>
         <div class="kd-button kd-button-submit" style="float: right; margin: 10px">Log In</div>
       </div>
-      <div id="cardedit">
+      <div id="newuser">
         <div id="addcard">
           <p>
             You need to add a card to your account.
           </p>
-          <div id="addinstrument" class="kd-button">+ Add a new card</div>
+          <div id="addcardbutton" class="kd-button">+ Add a new card</div>
         </div>
         We'll launch a window to add a card to your account shortly, but feel free to hit the button above if it doesn't come up.
+      </div>
+      <div id="showinstruments" style="display:block">
+        Instruments go here.
       </div>
     </div>
   </div>

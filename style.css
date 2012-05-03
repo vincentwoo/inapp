@@ -113,13 +113,17 @@ body {
           #cost span b {
             float: right;
           }
-        #total b {
-          font-size: 30px;
+        #total {
           line-height: 30px;
         }
+          #total b {
+            font-size: 25px;
+            line-height: 30px;
+          }
       #cardchange {
         float: right;
         margin-top:15px;
+        font-size: 14px;
       }
       #buybutton {
         display: block;
@@ -158,11 +162,8 @@ body {
       background: url('lock.png') no-repeat 3px 6px;
       margin-bottom: 5px;
     }
-    #notlogged {
+    #notlogged, #newuser, #showinstruments {
       display: none;
-    }
-    #cardedit {
-      //display: none;
     }
 
       #addcard {
@@ -184,7 +185,7 @@ body {
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
         }
-        #addinstrument {
+        #addcardbutton {
           position: absolute;
           bottom: 0;
           right: 0;
