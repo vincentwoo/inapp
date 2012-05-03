@@ -30,7 +30,7 @@ $(function() {
     var scroll_distance = $('#multi_instrument_list').find('li').outerHeight(true);
 
     var listcount = $('li').size();
-    var max_scroll = ((listcount - 3) * scroll_distance) * -1;
+    var max_scroll = ((listcount - 5) * scroll_distance) * -1;
 
     if (top_scroll >= 0 && offset < 0) return;
     if (top_scroll < max_scroll && offset > 0) return;
