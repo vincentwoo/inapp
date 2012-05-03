@@ -149,7 +149,7 @@ body {
     top: 50px;
     width: 250px;
     z-index: 4;
-    background: url('exclusive_paper.png');
+    background: #eee url('exclusive_paper.png');
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
