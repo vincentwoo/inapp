@@ -162,7 +162,7 @@ body {
       background: url('lock.png') no-repeat 3px 6px;
       margin-bottom: 5px;
     }
-    #notlogged, #newuser, #showinstruments {
+    #notlogged, #newuser, #oneinstrument {
       display: none;
     }
 
@@ -191,6 +191,21 @@ body {
           right: 0;
           z-index: 5;
         }
+    #bigcard {
+      background: #fff;
+      border-radius: 15px;
+      width: 200px;
+      height: 100px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      padding: 10px;
+      
+    }
+      #bigcard img {
+        margin: 0 10px 10px 0;
+        width: 50px;
+        vertical-align: middle;
+      }
   
   #config {
     border-radius: 15px;

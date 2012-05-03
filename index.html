@@ -22,7 +22,7 @@ $(function() {
         slideOut();
         $('#buybutton').addClass('disabled');
       } else {
-        $('#showinstruments').show();
+        $('#oneinstrument').show();
         $('#cardchange').show();
         $('#buybutton').removeClass('disabled');
       }
@@ -51,7 +51,8 @@ function slideOut() {
 <body>
 <div id="main">
   <div id="config">
-    <input type="radio" name="state" value="logged" checked> Logged in <br /> 
+    <input type="radio" name="state" value="logged" checked> Logged in with one card<br />
+    <input type="radio" name="state" value="multicard"> Logged in with multiple cards<br />
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
     <input type="radio" name="state" value="newuser"> New user <br />
   </div>
@@ -105,8 +106,13 @@ function slideOut() {
         </div>
         We'll launch a window to add a card to your account shortly, but feel free to hit the button above if it doesn't come up.
       </div>
-      <div id="showinstruments" style="display:block">
-        Instruments go here.
+      <div id="oneinstrument" style="display:block">
+        <div id="bigcard">
+          <img src="mc_logo.png" />
+          **** **** **** 0484
+          <br />
+          Vincent Woo
+        </div>
       </div>
     </div>
   </div>
