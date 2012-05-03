@@ -317,3 +317,7 @@ div.card_details {
     margin-top: -4px;
     display: block;
 }
+
+div.expired {
+    color: #f44;
+}
