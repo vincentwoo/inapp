@@ -11,9 +11,12 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Plus icon/image on "Add New" on multi-instrument selector
 [done]- "X" close in top-right of main frame
 [done]- GAIA email or photo anywhere?
+[done]- Take out auto-window-opening stuff, would trigger popup blockers
+[done]- Expired cards
 
-- Expired/non-functional/zero-balance cards
+- Non-functional cards
 - Stored value cards
+- Zero-balance stored value cards
 - Google Wallet account
 - Any other supported instruments
 - *** vs xxx on first part of CC numbers
@@ -27,4 +30,3 @@ i'm starring items i think are truly must-dos by demo time
 - Support multiple currencies
 - Clean support for clicking away from popup while it's up for either reason
 
--- Take out auto-window-opening stuff, would trigger popup blockers
