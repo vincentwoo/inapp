@@ -51,13 +51,23 @@ body {
   z-index: 1;
 }
 #butter {
-  background: #F9EDBE url('../images/gwallet_full.png') no-repeat 5px 0;
-  background-size: contain;
+  background: #F9EDBE url('../images/gwallet_full.png') no-repeat 5px 3px;
+  background-size: 50%;
   border-bottom: 1px solid #DDD8C0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   height: 40px;
 }
+  #close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  #close:hover {
+    background: #cfc59d;
+  }
 #frame {
   width: 635px;
   height: 332px;

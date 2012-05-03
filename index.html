@@ -38,7 +38,7 @@ $(function() {
     });
   });
 
-  $('#buybg').click(function() {
+  $('#buybg, #close').click(function() {
     $('#buyflow').fadeOut('fast');
   });
 
@@ -86,7 +86,9 @@ function slideOut() {
   <div id="buybg"></div>
   <div id="frame">
     <div id="left">
-      <div id="butter"></div>
+      <div id="butter">
+        <img src="images/x_close.gif" id="close" />
+      </div>
       <div id="iteminfo">
         <img id="itemimage" src="images/eagle.png" />
         <b>A Mighty Eagle</b>
