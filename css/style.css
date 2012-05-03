@@ -187,6 +187,11 @@ body {
       display: none;
     }
 
+    div#multi_instrument_list {
+        height: 155px;
+        overflow: hidden;
+    }
+
     #notlogged p {
         padding-top: 15px;
         font-weight: bold;

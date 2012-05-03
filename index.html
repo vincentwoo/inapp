@@ -23,6 +23,23 @@ $(function() {
     slideToggle();
   });
 
+  var listcount = $('li').size();
+  var cli = 1;
+
+  $('#down').click(function() {
+      if (cli < listcount) {
+        $('li:nth-child(' + cli + ')').slideToggle();
+        cli++;
+      }
+  });
+
+  $('#up').click(function() {
+      if (cli > 1) {
+        cli--;
+        $('li:nth-child(' + cli + ')').slideToggle();
+      }
+  });
+
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
     $('.instrument_list li.card_line_selected').toggleClass('card_line_selected');
@@ -111,6 +128,7 @@ function addInstrumentDone() {
 function loginDone() {
 
 }
+
 </script>
 </head>
 
@@ -208,6 +226,8 @@ function loginDone() {
       </div>
       
       <div id="showinstruments_multi">
+        <div id='up' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
+        <div id="multi_instrument_list">
         <ul class='instrument_list'>
             <li class="card_line_selected" card_type='master' card_num='9998'>
                 <div class='card_image'><img src='images/cc_master.png' /></div>
@@ -219,10 +239,20 @@ function loginDone() {
                 <div class='card_details'>***-3431</div>
                 <div class='card_expire'>(expires 07/14)</div>
             </li>
+            <li card_type='discover' card_num='5714'>
+                <div class='card_image'><img src='images/cc_discover.png' /></div>
+                <div class='card_details'>***-5714</div>
+                <div class='card_expire'>(expires 06/13)</div>
+            </li>
             <li card_type='amex' card_num='1312'>
                 <div class='card_image'><img src='images/cc_amex.png' /></div>
                 <div class='card_details'>***-1312</div>
                 <div class='card_expire'>(expires 02/15)</div>
+            </li>
+            <li card_type='master' card_num='2116'>
+                <div class='card_image'><img src='images/cc_master.png' /></div>
+                <div class='card_details'>***-2116</div>
+                <div class='card_expire'>(expires 04/14)</div>
             </li>
             <li class='expired' card_type='discover' card_num='9283' style="border: 0">
                 <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
@@ -230,6 +260,8 @@ function loginDone() {
                 <div class='card_expire card_expired'>(expired 01/12)</div>
             </li>
         </ul>
+        </div>
+        <div id='down' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> v </div>
         <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 0 10px;">
           <div>
             Add card in a new window
