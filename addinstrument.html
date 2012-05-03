@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<title>Add a new card</title>
+<body style="background: url('images/addinstrumentpopup.png') no-repeat">
+<script>
+document.onclick = function() {
+  var win = window.opener;
+  if (win && !win.closed) {
+    win.addInstrumentDone();
+  }
+  window.close();
+}
+</script>
+</body>
+</html>

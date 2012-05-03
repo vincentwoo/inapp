@@ -57,6 +57,11 @@ $(function() {
       setTimeout(slideIn, 250);
     }
   });
+  
+  $('.addcardbutton').click(function() {
+    open('addinstrument.html', 'addinstrument',
+         'resizable=yes, scrollbars=yes, status=no, width=579, height=468');
+  });
 });
 
 function slideToggle() {
@@ -71,6 +76,10 @@ function slideIn() {
 function slideOut() {
   $('#right').css('left', '50%');
   $('#cardchange').addClass('active');
+}
+
+function addInstrumentDone() {
+  
 }
 </script>
 </head>
