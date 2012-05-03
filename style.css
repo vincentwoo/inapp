@@ -13,14 +13,14 @@ html, body {
   position: absolute;
 }
 body {
-  background: #e4f8fc url('bgimage.png') center top no-repeat;
+  background: #e4f8fc url('images/bgimage.png') center top no-repeat;
   font: 13px/18px Arial;
   color: #222;
 }
 #main {
   width: 1028px;
   height: 772px;
-  background: url('angrybirds.png');
+  background: url('images/angrybirds.png');
   margin: 150px auto 0 auto;
   position: relative;
 }
@@ -51,7 +51,7 @@ body {
   z-index: 1;
 }
 #butter {
-  background: #F9EDBE url('gwallet_full.png') no-repeat 5px 0;
+  background: #F9EDBE url('images/gwallet_full.png') no-repeat 5px 0;
   background-size: contain;
   border-bottom: 1px solid #DDD8C0;
   border-top-left-radius: 8px;
@@ -149,7 +149,7 @@ body {
     top: 50px;
     width: 250px;
     z-index: 4;
-    background: url('exclusive_paper.png');
+    background: url('images/exclusive_paper.png');
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -159,7 +159,7 @@ body {
   }
     #right h3 {
       padding-left: 15px;
-      background: url('lock.png') no-repeat 3px 6px;
+      background: url('images/lock.png') no-repeat 3px 6px;
       margin-bottom: 5px;
     }
     #notlogged, #newuser, #showinstruments {
@@ -175,7 +175,7 @@ body {
         margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         position: relative;
-        background-image: url('visa_add.png');
+        background-image: url('images/visa_add.png');
       }
         #addcard p {
           position: absolute;
