@@ -19,4 +19,4 @@
 - Remove subtotal line if 0.00 taxes?
 - Deal with item descriptions that are longer than fits in the current box
 - Deal with item names that are longer than fits in the current box
-
+- Support multiple currencies
