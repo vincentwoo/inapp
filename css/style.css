@@ -175,7 +175,7 @@ body {
         margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         position: relative;
-        background-image: url('../images/visa_add.png');
+        background-image: url('../images/add_card_new.png');
       }
         #addcard p {
           position: absolute;
@@ -184,6 +184,31 @@ body {
           padding: 10px;
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
+        }
+      #singlecard {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 125px;
+        margin-left: 40px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        background-image: url('../images/blank_card_new.png');
+      }
+        #singlecard p {
+          position: absolute;
+          display: block;
+          text-align: center;
+          top: 35px;
+          width: 100%;
+          padding: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: bold;
+          background: rgba(255,255,255, 0.9) url('../images/check.png') no-repeat;
+          background-position: 0px 32px;
         }
         #addcardbutton {
           position: absolute;
