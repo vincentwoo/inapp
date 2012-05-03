@@ -84,6 +84,7 @@ function start () {
   $('#cardchange').hide();
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
+  $('#multi_instrument_list').empty();
 
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
@@ -96,8 +97,14 @@ function start () {
     } else {
       if (state == 'logged_one') {
         $('#showinstruments_one').show();
+        var cloned = $('#small_list').clone();
+        $('#multi_instrument_list').append(cloned);
+        cloned.show();
         $('#right').css('height', '259px');
       } else {
+        var cloned = $('#big_list').clone();
+        $('#multi_instrument_list').append(cloned);
+        cloned.show();
         $('#showinstruments_multi').show();
       }
       $('#cardchange').show();
@@ -144,7 +151,7 @@ function scrollTo(current, target) {
     function () {
       current.hide();
       target.css('height', 'auto');
-      right.css('height', target.outerHeight());
+      right.css('height', target.outerHeight() + 20);
       setTimeout(function() {
         right.css('-webkit-transition-property', 'left');
       }, 1000);
@@ -249,38 +256,7 @@ function scrollTo(current, target) {
       <div id="showinstruments_multi">
         <div id='up' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
         <div id="multi_instrument_list">
-        <ul class='instrument_list' style='position: relative: top: 0;'>
-            <li class="card_line_selected" card_type='master' card_num='9998'>
-                <div class='card_image'><img src='images/cc_master.png' /></div>
-                <div class='card_details'>***-9998</div>
-                <div class='card_expire'>(expires 11/13)</div>
-            </li>
-            <li card_type='visa' card_num='3431'>
-                <div class='card_image'><img src='images/cc_visa.png' /></div>
-                <div class='card_details'>***-3431</div>
-                <div class='card_expire'>(expires 07/14)</div>
-            </li>
-            <li card_type='discover' card_num='5714'>
-                <div class='card_image'><img src='images/cc_discover.png' /></div>
-                <div class='card_details'>***-5714</div>
-                <div class='card_expire'>(expires 06/13)</div>
-            </li>
-            <li card_type='amex' card_num='1312'>
-                <div class='card_image'><img src='images/cc_amex.png' /></div>
-                <div class='card_details'>***-1312</div>
-                <div class='card_expire'>(expires 02/15)</div>
-            </li>
-            <li card_type='master' card_num='2116'>
-                <div class='card_image'><img src='images/cc_master.png' /></div>
-                <div class='card_details'>***-2116</div>
-                <div class='card_expire'>(expires 04/14)</div>
-            </li>
-            <li class='expired' card_type='discover' card_num='9283' style="border: 0">
-                <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
-                <div class='card_details card_details_expired'>***-9283</div>
-                <div class='card_expire card_expired'>(expired 01/12)</div>
-            </li>
-        </ul>
+          
         </div>
         <div id='down' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> v </div>
         <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 0 10px;">
@@ -293,5 +269,44 @@ function scrollTo(current, target) {
     </div>
   </div>
 </div>
+<ul id="big_list" class='instrument_list' style='position: relative: top: 0;'>
+    <li class="card_line_selected" card_type='master' card_num='9998'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-9998</div>
+        <div class='card_expire'>(expires 11/13)</div>
+    </li>
+    <li card_type='visa' card_num='3431'>
+        <div class='card_image'><img src='images/cc_visa.png' /></div>
+        <div class='card_details'>***-3431</div>
+        <div class='card_expire'>(expires 07/14)</div>
+    </li>
+    <li card_type='discover' card_num='5714'>
+        <div class='card_image'><img src='images/cc_discover.png' /></div>
+        <div class='card_details'>***-5714</div>
+        <div class='card_expire'>(expires 06/13)</div>
+    </li>
+    <li card_type='amex' card_num='1312'>
+        <div class='card_image'><img src='images/cc_amex.png' /></div>
+        <div class='card_details'>***-1312</div>
+        <div class='card_expire'>(expires 02/15)</div>
+    </li>
+    <li card_type='master' card_num='2116'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-2116</div>
+        <div class='card_expire'>(expires 04/14)</div>
+    </li>
+    <li class='expired' card_type='discover' card_num='9283' style="border: 0">
+        <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
+        <div class='card_details card_details_expired'>***-9283</div>
+        <div class='card_expire card_expired'>(expired 01/12)</div>
+    </li>
+</ul>
+<ul id="small_list" class='instrument_list' style='position: relative: top: 0;'>
+    <li class="card_line_selected" card_type='master' card_num='9998'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-9998</div>
+        <div class='card_expire'>(expires 11/13)</div>
+    </li>
+</ul>
 </body>
 </html>

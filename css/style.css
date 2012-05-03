@@ -344,3 +344,7 @@ div.card_expired {
     opacity:.5;
     color: #f44;
 }
+
+#big_list, #small_list {
+  display: none;
+}
