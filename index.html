@@ -23,21 +23,29 @@ $(function() {
     slideToggle();
   });
 
-  var listcount = $('li').size();
-  var cli = 1;
+  var top_scroll = 0;
+
+  var scroll_ul = function(offset) {
+    var to_scroll = $('#multi_instrument_list').find('ul');
+    var scroll_distance = $('#multi_instrument_list').find('li').outerHeight(true);
+
+    var listcount = $('li').size();
+    var max_scroll = ((listcount - 3) * scroll_distance) * -1;
+
+    if (top_scroll >= 0 && offset < 0) return;
+    if (top_scroll < max_scroll && offset > 0) return;
+
+    top_scroll -= (offset * scroll_distance);
+
+    to_scroll.animate({ "marginTop": "-=" + (offset * scroll_distance) + "px" }, "fast");
+  }
 
   $('#down').click(function() {
-      if (cli < listcount) {
-        $('li:nth-child(' + cli + ')').slideToggle();
-        cli++;
-      }
+    scroll_ul(1);
   });
 
   $('#up').click(function() {
-      if (cli > 1) {
-        cli--;
-        $('li:nth-child(' + cli + ')').slideToggle();
-      }
+    scroll_ul(-1);
   });
 
   $('.instrument_list li').click(function() {
@@ -241,7 +249,7 @@ function scrollTo(current, target) {
       <div id="showinstruments_multi">
         <div id='up' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
         <div id="multi_instrument_list">
-        <ul class='instrument_list'>
+        <ul class='instrument_list' style='position: relative: top: 0;'>
             <li class="card_line_selected" card_type='master' card_num='9998'>
                 <div class='card_image'><img src='images/cc_master.png' /></div>
                 <div class='card_details'>***-9998</div>
