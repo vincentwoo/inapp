@@ -23,6 +23,7 @@ $(function() {
     slideToggle();
   });
 
+/*  // Deprecated code for click-to-scroll on n-element instrument lists
   var top_scroll = 0;
 
   var scroll_ul = function(offset) {
@@ -47,6 +48,7 @@ $(function() {
   $('#up').click(function() {
     scroll_ul(-1);
   });
+*/
 
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
@@ -247,8 +249,8 @@ function scrollTo(current, target) {
       </div>
       
       <div id="showinstruments_multi">
-        <div id='up' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
-        <div id="multi_instrument_list">
+        <div id='up' style='display: none; background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
+        <div id="multi_instrument_list" style="max-height: 160px; overflow: auto;">
         <ul class='instrument_list' style='position: relative: top: 0;'>
             <li class="card_line_selected" card_type='master' card_num='9998'>
                 <div class='card_image'><img src='images/cc_master.png' /></div>
@@ -282,7 +284,7 @@ function scrollTo(current, target) {
             </li>
         </ul>
         </div>
-        <div id='down' style='background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> v </div>
+        <div id='down' style='display: none; background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> v </div>
         <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 0 10px;">
           <div>
             Add card in a new window
