@@ -42,8 +42,8 @@ $(function() {
 
   $('#cardchange').click(slideToggle);
 
-  $('.single_instrument').click(function() {
-    $('.single_instrument').removeClass('selected');
+  $('.instrument_list li').click(function() {
+    $('.instrument_list li').removeClass('selected');
     $(this).addClass('selected');
     if (($(this).attr("card_type") == "visa" ||
          $(this).attr("card_type") == "master" ||
@@ -51,7 +51,7 @@ $(function() {
          $(this).attr("card_type") == "amex") &&
         ($(this).attr("card_num").length == 4)) {
       $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
-      slideIn();
+      setTimeout(slideIn, 250);
     }
   });
 });
@@ -112,6 +112,8 @@ function slideOut() {
       <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
     </div>
     <div id="right">
+      <a id="email">vwoo@google.com</a>
+      
       <div id="notlogged">
         <h3>Security Check Required</h3>
         <p>
@@ -119,6 +121,7 @@ function slideOut() {
         </p>
         <div class="kd-button kd-button-submit" style="float: right; margin: 10px">Log In</div>
       </div>
+      
       <div id="newuser">
         <div id="addcard">
           <p>
@@ -150,9 +153,10 @@ function slideOut() {
           You currently can pay only with the one card you have in your account. To add a different one, hit the button.
         </p>
       </div>
+      
       <div id="showinstruments_multi" style="display:block;">
         <ul class='instrument_list'>
-            <li class='single_instrument' card_type='master' card_num='9998'>
+            <li card_type='master' card_num='9998'>
                 <div class='card_image'>
                     <img src='images/cc_master.png' />
                 </div>
@@ -161,7 +165,7 @@ function slideOut() {
                 </div>
                 <div style='clear: both;'>
             </li>
-            <li class='single_instrument' card_type='visa' card_num='3431'>
+            <li card_type='visa' card_num='3431'>
                 <div class='card_image'>
                     <img src='images/cc_visa.png' />
                 </div>
@@ -179,7 +183,7 @@ function slideOut() {
                 </div>
                 <div style='clear: both;'>
             </li>
-            <li class='single_instrument' card_type='discover' card_num='9283'>
+            <li card_type='discover' card_num='9283' style="border: 0">
                 <div class='card_image'>
                     <img src='images/cc_discover.png' />
                 </div>
@@ -188,16 +192,12 @@ function slideOut() {
                 </div>
                 <div style='clear: both;'>
             </li>
-            <li class='add_instrument'>
-                <div class='card_image'>
-                    <img src='images/plus_button_small.png' />
-                </div>
-                <div class='card_details'>
-                    Add New Payment Method
-                </div>
-                <div style='clear: both;'>
-            </li>
         </ul>
+        <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 0 10px;">
+          <div>
+            Add a new card
+          </div>
+        </div>
       </div>
     </div>
   </div>
