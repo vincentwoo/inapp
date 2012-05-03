@@ -8,6 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript">
 $(function() {
+
   $('#button').click(function() {
     var state = $('input:radio[name=state]:checked').val();
     $('#right').css('left', '4%');
@@ -35,17 +36,20 @@ $(function() {
       }
     });
   });
+
   $('#buybg').click(function() {
     $('#buyflow').fadeOut('fast');
   });
+
   $('#cardchange').click(slideToggle);
+
   $('.single_instrument').click(function() {
     $('.single_instrument').removeClass('selected');
     $(this).addClass('selected');
     if (($(this).attr("card_type") == "visa" ||
-        $(this).attr("card_type") == "master" ||
-        $(this).attr("card_type") == "discover" ||
-        $(this).attr("card_type") == "amex") &&
+         $(this).attr("card_type") == "master" ||
+         $(this).attr("card_type") == "discover" ||
+         $(this).attr("card_type") == "amex") &&
         ($(this).attr("card_num").length == 4)) {
       $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
     }
