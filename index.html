@@ -51,6 +51,7 @@ $(function() {
          $(this).attr("card_type") == "amex") &&
         ($(this).attr("card_num").length == 4)) {
       $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " &#187");
+      slideIn();
     }
   });
 });
@@ -125,7 +126,9 @@ function slideOut() {
           </p>
           <div class="kd-button addcardbutton"
               style="position: absolute; bottom: 0; right: 0; z-index: 5;">
-            + Add a new card
+            <div>
+              Add a new card
+            </div>
           </div>
         </div>
         We'll launch a window to add a card to your account shortly, but feel free to hit the button above if it doesn't come up.
@@ -139,7 +142,9 @@ function slideOut() {
           Vincent Woo
         </div>
         <div class="kd-button addcardbutton" style="float:right; margin: 10px">
-          + Add a new card
+          <div>
+            Add a new card
+          </div>
         </div>
         <p style="clear:both">
           You currently can pay only with the one card you have in your account. To add a different one, hit the button.
@@ -185,10 +190,10 @@ function slideOut() {
             </li>
             <li class='add_instrument'>
                 <div class='card_image'>
-                    <img src='images/cc_visa.png' />
+                    <img src='images/plus_button_small.png' />
                 </div>
                 <div class='card_details'>
-                    Add New
+                    Add New Payment Method
                 </div>
                 <div style='clear: both;'>
             </li>

@@ -186,6 +186,11 @@ body {
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
         }
+      .addcardbutton div {
+        padding-left: 20px;
+        background: url('../images/plus_button_small.png') 0px 5px no-repeat;
+        background-size: 15px 15px;
+      }
       #singlecard {
         background-size: contain;
         background-repeat: no-repeat;
