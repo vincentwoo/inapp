@@ -26,3 +26,5 @@ i'm starring items i think are truly must-dos by demo time
 - Deal with item names that are longer than fits in the current box
 - Support multiple currencies
 - Clean support for clicking away from popup while it's up for either reason
+
+-- Take out auto-window-opening stuff, would trigger popup blockers

@@ -182,6 +182,15 @@ body {
       display: none;
     }
 
+    #notlogged p {
+        padding-top: 15px;
+        font-weight: bold;
+    }
+
+    #showinstruments_one p {
+        font-weight: bold;
+    }
+
       #addcard {
         background-size: contain;
         background-repeat: no-repeat;
@@ -197,7 +206,7 @@ body {
         #addcard p {
           position: absolute;
           display: block;
-          top: 10px;
+          top: 27px;
           padding: 10px;
           font-weight: bold;
           background: rgba(255,255,255, 0.9);
