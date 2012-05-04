@@ -3,8 +3,8 @@ i'm starring items i think are truly must-dos by demo time
 *- Flexible merchant logo area (support for no logo)
 *- Flexible item image area (support for no logo)
 *- Spinner?  (Different design spinner?)
-*- Tax/Total area fitting to size of content within it
-*- Flexible left frame area
+*- Tax/Total area fitting to size of content within it (shrinking if no tax, e.g.)
+*- Flexible left frame area (height, shadow, etc.)
 
 [done]- Plus icon/image on "Add New" on multi-instrument selector
 [done]- "X" close in top-right of main frame
