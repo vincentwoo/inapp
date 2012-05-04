@@ -449,3 +449,11 @@ div.item_price {
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
 }
+
+.card_type_name {
+    padding-left: 5px;
+    vertical-align: top;
+}
+
+
+
