@@ -60,9 +60,9 @@ function start () {
   $('#multi_instrument_list').empty();
 
   if (state == 'logged_multi_line') {
-    $('#subtotal_price').text('$519.94');
-    $('#taxes_price').text('$41.60');
-    $('#total_price').text('$561.54');
+    $('#subtotal_price').text('$5,024.84');
+    $('#taxes_price').text('$401.99');
+    $('#total_price').text('$5,426.83');
   } else if (state == 'logged_multi') {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.00');
@@ -241,7 +241,7 @@ function scrollTo(current, target, callback) {
                   <img id="itemimage_multi" src="images/eagle.png" />
                   <div class='item_name'><b>The Mightiest Eagle</b></div>
               </div>
-              <div class='item_price'><b>$4.99</b></div>
+              <div class='item_price'><b>$4.99</b> <span class='quantity'>x2</span></div>
           </div>
           <div class='lineitem'>
               <div class='item_data'>
@@ -255,7 +255,7 @@ function scrollTo(current, target, callback) {
                   <img id="itemimage_multi" src="images/honeybadger.jpg" />
                   <div class='item_name'><b>Honey Badger</b></div>
               </div>
-              <div class='item_price'><b>$499.99</b></div>
+              <div class='item_price'><b>$499.99</b> <span class='quantity'>x10</span></div>
           </div>
         </div>
         <div style="float: right">
