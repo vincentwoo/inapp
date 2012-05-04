@@ -217,17 +217,17 @@ function handleBuy() {
 
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
-    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
+    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), function() { appendInstrument(false); });
   } else if ($('#newuser').is(':visible')) {
     scrollTo($('#newuser'), $('#showinstruments_one'));
     $('#buybutton').removeClass('disabled');
     $('#cardchange').show();
   } else {
-    appendInstrument();
+    appendInstrument(true);
   }
 }
 
-function appendInstrument() {
+function appendInstrument(is_multi) {
   var cloned = $('#clone_visa').clone(true);
   cloned.attr('id', '');
 
@@ -264,8 +264,12 @@ function appendInstrument() {
   cloned.addClass('card_line_selected');
   updateCardThumb(cloned);
   cloned.hide();
-  cloned.slideDown();
-  $('#multi_instrument_list').scrollTop(0);
+  cloned.slideDown(400, function() {
+    $('#multi_instrument_list').scrollTop(0);
+    if (is_multi == true) {
+      slideIn();
+    }
+  });
 }
 
 function loginDone() {
