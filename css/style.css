@@ -100,7 +100,7 @@ body {
     }
     #iteminfo_quantity {
       border-bottom: 1px solid #ccc;
-      padding: 15px 15px 10px 15px;
+      padding: 10px 15px 5px 15px;
     }
     #iteminfo_multi {
       border-bottom: 1px solid #ccc;
@@ -400,13 +400,11 @@ div.item_price {
 }
 
 #receipt {
-    height: 85px;
     display: none;
 }
 
 #receipt_summary {
-    height: 85px;
-    display: block;
+    height: 73px;
 }
 
 #receipt_left {

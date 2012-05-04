@@ -29,6 +29,7 @@ $(function() {
     $('#receipt_seller').text('Rovio');
     $('#receipt_instrument').text('Visa ***-4323');
     $('#receipt_date').text('May 3, 2012');
+    $('#closebutton').show();
     $('#receipt').show();
   })
 
@@ -68,6 +69,7 @@ function start () {
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
   $('#receipt').hide();
+  $('#closebutton').hide();
   $('#basepanel').show();
   $('#multi_instrument_list').empty();
 
@@ -352,8 +354,8 @@ function scrollTo(current, target, callback) {
             <span id='receipt_date'> </span>
           </div>
         </div>
-        <a id="closebutton" class="kd-button kd-button-submit">Back to My Game</a>
       </div>
+      <a id="closebutton" class="kd-button kd-button-submit">Back to My Game</a>
     </div>
 
     <div id="right">
