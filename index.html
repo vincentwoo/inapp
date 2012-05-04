@@ -99,6 +99,14 @@ function start () {
     $('#iteminfo_multi').show();
     $('#iteminfo_one').hide();
     $('#iteminfo_quantity').hide();
+/*
+    $('.item_name').each(function() {
+      alert($(this).width());
+      alert($(this).outerWidth(true));
+      alert($(this)[0].clientWidth);
+      alert($(this)[0].scrollWidth);
+    });
+*/
   } else if (state == 'logged_multi_quantity') {
     $('#iteminfo_one').hide();
     $('#iteminfo_quantity').show();

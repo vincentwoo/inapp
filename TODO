@@ -18,8 +18,8 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Multi line item
 [done]- Remove taxes line if 0.00 taxes
 [done]- Remove subtotal line if 0.00 taxes
-[done]*- Multi quantity on single item
-[done]*- Multi quantity on multi line item
+[done]- Multi quantity on single item
+[done]- Multi quantity on multi line item
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
