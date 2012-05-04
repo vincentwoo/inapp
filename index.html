@@ -182,6 +182,7 @@ function addInstrumentDone() {
   } else if ($('#newuser').is(':visible')) {
     scrollTo($('#newuser'), $('#showinstruments_one'));
     $('#buybutton').removeClass('disabled');
+    $('#cardchange').show();
   } else {
     appendInstrument();
   }
