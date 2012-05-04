@@ -85,7 +85,6 @@ function start () {
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
   $('#multi_instrument_list').empty();
-  $('#iteminfo_multi').hide();
 
   if (state == 'logged_multi_line') {
     $('#subtotal_price').text('$519.94');
@@ -106,11 +105,13 @@ function start () {
     $('#subtotal_price').hide();
     $('#taxes_label').hide();
     $('#taxes_price').hide();
+    $('#summary_items').height(14);
   } else {
     $('#subtotal_label').show();
     $('#subtotal_price').show();
     $('#taxes_label').show();
     $('#taxes_price').show();
+    $('#summary_items').height(36);
   }
 
   if (state == 'notlogged') $('#notlogged').show();
@@ -292,8 +293,10 @@ function scrollTo(current, target, callback) {
       </div>
       <div id="sellerinfo">
         <div id="cost">
-            <span id='subtotal_label'>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
-            <span id='taxes_label'>taxes <b><span id='taxes_price'>$0.16</span></b></span>
+            <div id='summary_items'>
+              <span id='subtotal_label'>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
+              <span id='taxes_label'>taxes <b><span id='taxes_price'>$0.16</span></b></span>
+            </div>
             <span id="total">total <b><span id='total_price'>$2.15</span></b></span>
         </div>
 

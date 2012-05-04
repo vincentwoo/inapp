@@ -380,3 +380,7 @@ div.item_price {
     float: right;
     margin-top: 4px;
 }
+
+div#summary_items {
+    height: 36px;
+}
