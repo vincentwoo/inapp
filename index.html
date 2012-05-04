@@ -197,7 +197,7 @@ function scrollTo(current, target, callback) {
   right.css('height', right.outerHeight() + 'px');
   target.css('height', right.outerHeight() + 'px');
   setTimeout(function(){
-  right.css('-webkit-transition-property', 'height, left');
+  right.css('-webkit-transition-property', 'height, left, opacity');
   target.show();
   right.animate({
       scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
@@ -208,7 +208,7 @@ function scrollTo(current, target, callback) {
       target.css('height', 'auto');
       right.css('height', target.outerHeight() + 30);
       setTimeout(function() {
-        right.css('-webkit-transition-property', 'left');
+        right.css('-webkit-transition-property', 'left, opacity');
         right.css('height', 'auto');
         if (callback) callback();
       }, 500);
@@ -360,7 +360,7 @@ function scrollTo(current, target, callback) {
           <div style="clear:both"></div>
         </div>
       </div>
-      <a id="closebutton" class="kd-button kd-button-submit">Back to My Game</a>
+      <a id="closebutton" class="kd-button kd-button-share">Back to My Game</a>
     </div>
 
     <a id="email">vwoo@google.com</a>
