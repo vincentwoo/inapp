@@ -24,11 +24,13 @@ $(function() {
   });
 
   $('#buybutton').click(function() {
+    slideIn();
     $('#basepanel').hide();
     $('#receipt_total').text($('#total_price').text());
     $('#receipt_seller').text('Rovio');
     $('#receipt_instrument').text('Visa ***-4323');
     $('#receipt_date').text('May 3, 2012');
+    
     $('#closebutton').show();
     $('#receipt').show();
   })
@@ -92,17 +94,15 @@ function start () {
   }
   
   if ($('#total_price').text() == $('#subtotal_price').text()) {
-    $('#subtotal_label').hide();
-    $('#subtotal_price').hide();
+    $('#summary_items').hide();
     $('#taxes_label').hide();
     $('#taxes_price').hide();
-    $('#summary_items').height(14);
+    //$('#summary_items').height(14);
   } else {
-    $('#subtotal_label').show();
-    $('#subtotal_price').show();
+    $('#summary_items').show();
     $('#taxes_label').show();
     $('#taxes_price').show();
-    $('#summary_items').height(36);
+    //$('#summary_items').height(36);
   }
 
   if (state == 'notlogged') $('#notlogged').show();
@@ -339,7 +339,7 @@ function scrollTo(current, target, callback) {
               <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />
             </div>
           </div>
-
+          <div style="clear:both"></div>
         </div>
         <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
       </div>
