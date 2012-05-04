@@ -86,10 +86,16 @@ function start () {
   $('#cardchange').hide();
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
+  $('#iteminfo_multi').hide();
 
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
   if (state == 'newuser') $('#newuser').show();
+
+  if (state == 'logged_multi_line') {
+    $('#iteminfo_multi').show();
+    $('#iteminfo_one').hide();
+  }
   
   $('#buyflow').fadeIn('fast', function() {
     if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line') {
@@ -186,11 +192,36 @@ function scrollTo(current, target) {
         <div style="clear:both"></div>
       </div>
       <div id="iteminfo_multi">
-        <img id="itemimage" src="images/eagle.png" />
-        <b>A Mighty Eagle</b>
-        <p>
-          A mighty eagle decimates your enemies with deadly precision - buy one today.
-        </p>
+        <div class='lineitems'>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>A Mighty Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$1.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>A Mightier Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$2.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>Even Mightier Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$3.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>The Mightiest Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$4.99</b></div>
+          </div>
+        </div>
         <div style="float: right">
           Sold by <b>Rovio</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
