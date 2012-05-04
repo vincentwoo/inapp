@@ -125,7 +125,7 @@ body {
         border: 1px solid #ccc;
         float: left;
       }
-    #sellerinfo {
+    #sellerinfo, #receipt {
       padding: 10px 15px 5px 15px;
       border-bottom: 1px solid #ccc;
       box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
@@ -161,7 +161,7 @@ body {
      .cardarrow_box {
         display: inline-block;
       }
-      #buybutton {
+      #buybutton, #closebutton {
         display: block;
         height: 40px;
         font-size: 2em;
@@ -173,10 +173,10 @@ body {
         text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.5) 0 -1px;
         color: #fff;
       }
-      #buybutton:active {
+      #buybutton:active, #closebutton:active {
       	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0px 1px 2px rgba(0,0,0,0.3);
       }
-      #buybutton.disabled {
+      #buybutton.disabled, #closebutton.disabled {
         box-shadow: none;
       }
   #right {
@@ -399,6 +399,37 @@ div.item_price {
     margin-top: 4px;
 }
 
-div#summary_items {
+#summary_items {
     height: 36px;
+}
+
+#receipt {
+    height: 85px;
+    display: none;
+}
+
+#receipt_summary {
+    height: 85px;
+    display: block;
+}
+
+#receipt_left {
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+#receipt_right {
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+#amount, #method, #seller, #date {
+    font-size: 12px;
+}
+
+#receipt_total, #receipt_seller, #receipt_instrument, #receipt_date {
+    font-weight: bold;
+    font-size: 15px;
 }
