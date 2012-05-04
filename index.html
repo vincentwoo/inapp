@@ -23,33 +23,6 @@ $(function() {
     slideToggle();
   });
 
-/*  // Deprecated code for click-to-scroll on n-element instrument lists
-  var top_scroll = 0;
-
-  var scroll_ul = function(offset) {
-    var to_scroll = $('#multi_instrument_list').find('ul');
-    var scroll_distance = $('#multi_instrument_list').find('li').outerHeight(true);
-
-    var listcount = $('li').size();
-    var max_scroll = ((listcount - 5) * scroll_distance) * -1;
-
-    if (top_scroll >= 0 && offset < 0) return;
-    if (top_scroll < max_scroll && offset > 0) return;
-
-    top_scroll -= (offset * scroll_distance);
-
-    to_scroll.animate({ "marginTop": "-=" + (offset * scroll_distance) + "px" }, "fast");
-  }
-
-  $('#down').click(function() {
-    scroll_ul(1);
-  });
-
-  $('#up').click(function() {
-    scroll_ul(-1);
-  });
-*/
-
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
     $('.instrument_list li').removeClass('card_line_selected');
