@@ -2,8 +2,6 @@ i'm starring items i think are truly must-dos by demo time
 
 *- Flexible merchant logo area (support for no logo)
 *- Flexible item image area (support for no logo)
-*- Multi quantity on single item
-*- Multi quantity on multi line item
 *- Spinner?  (Different design spinner?)
 
 [done]- Plus icon/image on "Add New" on multi-instrument selector
@@ -18,6 +16,8 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Multi line item
 [done]- Remove taxes line if 0.00 taxes
 [done]- Remove subtotal line if 0.00 taxes
+[done]*- Multi quantity on single item
+[done]*- Multi quantity on multi line item
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)

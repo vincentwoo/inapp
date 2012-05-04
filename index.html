@@ -67,7 +67,11 @@ function start () {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.00');
     $('#total_price').text('$1.99');
-  } else {
+  } else if (state == 'logged_multi_quantity') {
+    $('#subtotal_price').text('$7.96');
+    $('#taxes_price').text('$0.64');
+    $('#total_price').text('$8.60');
+  }else {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.16');
     $('#total_price').text('$2.15');
@@ -94,13 +98,19 @@ function start () {
   if (state == 'logged_multi_line') {
     $('#iteminfo_multi').show();
     $('#iteminfo_one').hide();
+    $('#iteminfo_quantity').hide();
+  } else if (state == 'logged_multi_quantity') {
+    $('#iteminfo_one').hide();
+    $('#iteminfo_quantity').show();
+    $('#iteminfo_multi').hide();
   } else {
     $('#iteminfo_one').show();
+    $('#iteminfo_quantity').hide();
     $('#iteminfo_multi').hide();
   }
   
   $('#buyflow').fadeIn('fast', function() {
-    if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line') {
+    if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line' && state != 'logged_multi_quantity') {
       slideOut();
       $('#buybutton').addClass('disabled');
     } else {
@@ -186,11 +196,12 @@ function scrollTo(current, target, callback) {
 <body>
 <div id="main">
   <div id="config">
-    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item<br /> 
+    <input type="radio" name="state" value="logged_multi_quantity"> Single Item/Multi Quantity<br /> 
+    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item/Quantity<br /> 
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
     <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
-    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
     <input type="radio" name="state" value="newuser"> New user <br />
+    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
   </div>
   <div id="button"></div>
 </div>
@@ -200,6 +211,18 @@ function scrollTo(current, target, callback) {
     <div id="left">
       <div id="butter">
         <img src="images/x_close.gif" id="close" />
+      </div>
+      <div id="iteminfo_quantity">
+        <img id="itemimage" src="images/eagle.png" />
+        <b>A Mighty Eagle (Qty: 4)</b>
+        <p>
+          A mighty eagle decimates your enemies with deadly precision - buy one today. <span id='iteminfo_quantity_price'>($1.99 each)</span>
+        </p>
+        <div style="float: right">
+          Sold by <b>Rovio</b>
+          <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
+        </div>
+        <div style="clear:both"></div>
       </div>
       <div id="iteminfo_one">
         <img id="itemimage" src="images/eagle.png" />
