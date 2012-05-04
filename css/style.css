@@ -367,7 +367,7 @@ div.card_expired {
   display: none;
 }
 div.lineitems {
-    max-height: 220px;
+    max-height: 215px;
     overflow: auto;
 }
 
@@ -449,6 +449,17 @@ div.item_price {
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
+}
+
+.single_item_description {
+    font-size: 13px;
+    line-height: 18px;
+    max-height: 98px;
+    overflow: scroll;
+}
+
+.single_item_quantity {
+    float: right;
 }
 
 .card_type_name {

@@ -69,9 +69,9 @@ function start () {
   $('#multi_instrument_list').empty();
 
   if (items == 'multi_line') {
-    $('#subtotal_price').text('$5,024.84');
+    $('#subtotal_price').text('$5,024.85');
     $('#taxes_price').text('$401.99');
-    $('#total_price').text('$5,426.83');
+    $('#total_price').text('$5,426.84');
   } else if (items == 'single_quantity') {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.00');
@@ -308,10 +308,12 @@ function scrollTo(current, target, callback) {
       <div id="iteminfo_quantity">
         <img id="itemimage" src="images/eagle.png" />
         <span class='single_item_name'><b>Super Duper Ultra Mega Mightiest Eagle</b></span>
-        <p>
-          A mighty eagle decimates your enemies with deadly precision - buy one today.
-        </p>
-        Qty: <b>4</b> x <b>$1.99</b> each</span>
+        <div class='single_item_description'>
+            A mighty eagle decimates your enemies with deadly precision - buy one today.  Beware his talons.  They are sharp.  And cut like paper.  Paper made of steel.  Steel made of iron.  Cast in the shape of a fish.  Beware the fish-iron-steel-paper-talons of this eagle.
+        </div>
+        <div class='single_item_quantity'>
+            Qty: <b>4</b> x <b>$1.99</b> each</span>
+        </div>
         <div style="float: right">
           Sold by <b>Rovio Mobile Gaming, Inc.</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
@@ -322,9 +324,9 @@ function scrollTo(current, target, callback) {
       <div id="iteminfo_one">
         <img id="itemimage" src="images/eagle.png" />
         <span class='single_item_name'><b>A Mighty Eagle</b></span>
-        <p>
-          A mighty eagle decimates your enemies with deadly precision - buy one today.
-        </p>
+        <div class='single_item_description'>
+            A mighty eagle decimates your enemies with deadly precision - buy one today.
+        </div>
         <div style="float: right">
           Sold by <b>Rovio Mobile Gaming, Inc.</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
@@ -375,6 +377,13 @@ function scrollTo(current, target, callback) {
                   <div class='item_name'><b>Honey Badger</b></div>
               </div>
               <div class='item_price'><b>$499.99</b> <span class='quantity'>x10</span></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/secret_item.png" />
+                  <div class='item_name'><b>Pali</b></div>
+              </div>
+              <div class='item_price'><b>$0.01</b></div>
           </div>
         </div>
         <div style="float: right">
