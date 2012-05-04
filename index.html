@@ -228,7 +228,7 @@ function addInstrumentDone() {
 }
 
 function appendInstrument() {
-  var cloned = $('#clone_visa').clone();
+  var cloned = $('#clone_visa').clone(true);
   cloned.attr('id', '');
 
   var card_num = Math.floor(Math.random() * 8999) + 1000;
