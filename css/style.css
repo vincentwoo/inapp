@@ -55,22 +55,40 @@ body {
   z-index: 1;
 }
 #butter {
-  background: #F9EDBE url('../images/gwallet_full.png') no-repeat 5px 3px;
   background-size: 50%;
-  border-bottom: 1px solid #DDD8C0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  height: 40px;
+  height: 5px;
 }
   #close {
     position: absolute;
-    top: 5px;
+    top: 3px;
     right: 5px;
     padding: 5px;
     border-radius: 5px;
   }
   #close:hover {
     background: #cfc59d;
+  }
+#loading {
+  width: 300px;
+  height: 110px;
+  padding: 15px;
+  position: absolute;
+  margin-top: -55px;
+  margin-left: -150px;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  background: #fff;
+  border-radius: 15px;
+  display: none;
+}
+  #loading img {
+    width: 250px;
+  }
+  #loading h3 {
+    margin-left: 90px;
   }
 #frame {
   width: 635px;
@@ -80,6 +98,7 @@ body {
   top: 50%;
   left: 50%;
   z-index: 2;
+  display: none;
 }
   #left {
     position: absolute;
@@ -126,6 +145,10 @@ body {
       background: #F1F1F1;
       background-size: contain;
       position: relative;
+    }
+    #loader {
+      width: 18px; height: 18px;
+      float: left; margin-right: 15px;
     }
       #cost {
         width: 55%;

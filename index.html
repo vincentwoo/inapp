@@ -12,7 +12,9 @@ $(function() {
   $('#button').click(start);
 
   $('#buybg, #close, #closebutton').click(function() {
-    $('#buyflow').fadeOut('fast');
+    $('#buyflow').fadeOut('fast', function() {
+      $('#frame').hide();
+    });
   });
 
   $('#cardchange').click(function() {
@@ -54,6 +56,21 @@ function updateCardThumb(card) {
 }
 
 function start () {
+  $('#buyflow').fadeIn('fast', function() {
+    $('#loading').fadeIn('fast', function() {
+      $('#loader').prependTo('#loading h3');
+      var ai = new ActivityIndicator();
+      ai.start();
+      setTimeout(function() {
+        ai.stop();
+        $('#loading').fadeOut();
+        showFrame();
+      }, 2500);
+    });
+  });
+}
+
+function showFrame() {
   var state = $('input:radio[name=state]:checked').val();
   var items = $('input:radio[name=items]:checked').val();
   slideIn();
@@ -116,7 +133,7 @@ function start () {
     $('#iteminfo_multi').hide();
   }
   
-  $('#buyflow').fadeIn('fast', function() {
+  $('#frame').fadeIn('fast', function() {
     if (state != 'logged_one' && state != 'logged_multi') {
       slideOut();
       $('#buybutton').addClass('disabled');
@@ -164,6 +181,7 @@ function handleBuy() {
   $('#basepanel').hide();
   
   $('#progress').slideDown('fast', function() {
+    $('#loader').prependTo('#progress div')
     var ai = new ActivityIndicator();
     ai.start();
     setTimeout(function() {
@@ -299,6 +317,10 @@ function scrollTo(current, target, callback) {
 </div>
 <div id="buyflow">
   <div id="buybg"></div>
+  <div id="loading">
+    <img src="images/gwallet_full.png" />
+    <h3>Loading</h3>
+  </div>
   <div id="frame">
     <div id="left">
       <div id="butter">
@@ -417,7 +439,7 @@ function scrollTo(current, target, callback) {
       
       <div id="progress">
         <div style="margin: 10px 0 10px 15px">
-        <div id="loader" style="float: left; margin-right: 15px; width: 18px; height: 18px;">
+        <div id="loader">
       		<div class="circle initial">
       			<span class="mask">
       				<span class="mover"></span>
