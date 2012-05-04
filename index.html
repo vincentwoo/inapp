@@ -52,16 +52,10 @@ $(function() {
 
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
-    $('.instrument_list li.card_line_selected').toggleClass('card_line_selected');
-    $(this).toggleClass('card_line_selected');
-    if (($(this).attr("card_type") == "visa" ||
-         $(this).attr("card_type") == "master" ||
-         $(this).attr("card_type") == "discover" ||
-         $(this).attr("card_type") == "amex") &&
-        ($(this).attr("card_num").length == 4)) {
-      $('#cardchange').html("<img src='images/cc_" + $(this).attr("card_type") + ".png'> ***-" + $(this).attr("card_num") + " <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />");
-      setTimeout(slideIn, 250);
-    }
+    $('.instrument_list li').removeClass('card_line_selected');
+    $(this).addClass('card_line_selected');
+    updateCardThumb($(this));
+    setTimeout(slideIn, 250);
   });
   
   $('.addcardbutton').click(function() {
@@ -77,6 +71,10 @@ $(function() {
   setTimeout(start, 500);
 });
 
+function updateCardThumb(card) {
+  $('#cardchange').html("<img src='images/cc_" + card.attr("card_type") + ".png'> ***-" + card.attr("card_num") + " <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />");
+}
+
 function start () {
   var state = $('input:radio[name=state]:checked').val();
   slideIn();
@@ -86,6 +84,7 @@ function start () {
   $('#cardchange').hide();
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
+  $('#multi_instrument_list').empty();
   $('#iteminfo_multi').hide();
 
   if (state == 'logged_multi_line') {
@@ -133,8 +132,14 @@ function start () {
     } else {
       if (state == 'logged_one') {
         $('#showinstruments_one').show();
+        var cloned = $('#small_list').clone(true);
+        $('#multi_instrument_list').append(cloned);
+        cloned.show();
         $('#right').css('height', '259px');
       } else {
+        var cloned = $('#big_list').clone(true);
+        $('#multi_instrument_list').append(cloned);
+        cloned.show();
         $('#showinstruments_multi').show();
       }
       $('#cardchange').show();
@@ -159,32 +164,46 @@ function slideOut() {
 
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
-    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'));
+    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
   }
+  else appendInstrument();
+}
+
+function appendInstrument() {
+  var cloned = $('#clone_visa').clone();
+  cloned.attr('id', '');
+  $('#multi_instrument_list ul').prepend(cloned);
+  $('.instrument_list li').removeClass('card_line_selected');
+  cloned.addClass('card_line_selected');
+  updateCardThumb(cloned);
+  cloned.hide();
+  cloned.slideDown();
+  $('#multi_instrument_list').scrollTop(0);
 }
 
 function loginDone() {
 
 }
 
-function scrollTo(current, target) {
+function scrollTo(current, target, callback) {
   var right = $('#right');
   right.css('-webkit-transition-property', 'height, left');
   target.show();
-  console.log(target.css('height'));
   target.css('height', right.outerHeight() + 'px');
     console.log(target.css('height'));
   right.animate({
       scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
     },
-    1000,
+    750,
     function () {
       current.hide();
       target.css('height', 'auto');
-      right.css('height', target.outerHeight());
+      right.css('height', target.outerHeight() + 30);
       setTimeout(function() {
         right.css('-webkit-transition-property', 'left');
-      }, 1000);
+        right.css('height', 'auto');
+        callback();
+      }, 500);
     });
 }
 </script>
@@ -336,43 +355,10 @@ function scrollTo(current, target) {
       </div>
       
       <div id="showinstruments_multi">
-        <div id='up' style='display: none; background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> ^ </div>
-        <div id="multi_instrument_list" style="max-height: 160px; overflow: auto;">
-        <ul class='instrument_list' style='position: relative: top: 0;'>
-            <li class="card_line_selected" card_type='master' card_num='9998'>
-                <div class='card_image'><img src='images/cc_master.png' /></div>
-                <div class='card_details'>***-9998</div>
-                <div class='card_expire'>(expires 11/13)</div>
-            </li>
-            <li card_type='visa' card_num='3431'>
-                <div class='card_image'><img src='images/cc_visa.png' /></div>
-                <div class='card_details'>***-3431</div>
-                <div class='card_expire'>(expires 07/14)</div>
-            </li>
-            <li card_type='discover' card_num='5714'>
-                <div class='card_image'><img src='images/cc_discover.png' /></div>
-                <div class='card_details'>***-5714</div>
-                <div class='card_expire'>(expires 06/13)</div>
-            </li>
-            <li card_type='amex' card_num='1312'>
-                <div class='card_image'><img src='images/cc_amex.png' /></div>
-                <div class='card_details'>***-1312</div>
-                <div class='card_expire'>(expires 02/15)</div>
-            </li>
-            <li card_type='master' card_num='2116'>
-                <div class='card_image'><img src='images/cc_master.png' /></div>
-                <div class='card_details'>***-2116</div>
-                <div class='card_expire'>(expires 04/14)</div>
-            </li>
-            <li class='expired' card_type='discover' card_num='9283' style="border: 0">
-                <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
-                <div class='card_details card_details_expired'>***-9283</div>
-                <div class='card_expire card_expired'>(expired 01/12)</div>
-            </li>
-        </ul>
+        <div id="multi_instrument_list">
+
         </div>
-        <div id='down' style='display: none; background-color: #ccc; border: 1px solid #aaa; font-weight: bold; text-align: center;'> v </div>
-        <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 0 10px;">
+        <div class="kd-button addcardbutton" style="float:right; margin: 10px 0 15px 10px;">
           <div>
             Add card in a new window
           </div>
@@ -382,5 +368,47 @@ function scrollTo(current, target) {
     </div>
   </div>
 </div>
+
+<!-- not shown -->
+<ul id="big_list" class='instrument_list' style='position: relative: top: 0;'>
+    <li class="card_line_selected" card_type='master' card_num='9998'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-9998</div>
+        <div class='card_expire'>(expires 11/13)</div>
+    </li>
+    <li card_type='visa' id="clone_visa" card_num='3431'>
+        <div class='card_image'><img src='images/cc_visa.png' /></div>
+        <div class='card_details'>***-3431</div>
+        <div class='card_expire'>(expires 07/14)</div>
+    </li>
+    <li card_type='discover' card_num='5714'>
+        <div class='card_image'><img src='images/cc_discover.png' /></div>
+        <div class='card_details'>***-5714</div>
+        <div class='card_expire'>(expires 06/13)</div>
+    </li>
+    <li card_type='amex' card_num='1312'>
+        <div class='card_image'><img src='images/cc_amex.png' /></div>
+        <div class='card_details'>***-1312</div>
+        <div class='card_expire'>(expires 02/15)</div>
+    </li>
+    <li card_type='master' card_num='2116'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-2116</div>
+        <div class='card_expire'>(expires 04/14)</div>
+    </li>
+    <li class='expired' card_type='discover' card_num='9283' style="border: 0">
+        <div class='card_image card_expired'><img src='images/cc_discover.png' /></div>
+        <div class='card_details card_details_expired'>***-9283</div>
+        <div class='card_expire card_expired'>(expired 01/12)</div>
+    </li>
+</ul>
+<ul id="small_list" class='instrument_list' style='position: relative: top: 0;'>
+    <li class="card_line_selected" card_type='master' card_num='9998'>
+        <div class='card_image'><img src='images/cc_master.png' /></div>
+        <div class='card_details'>***-9998</div>
+        <div class='card_expire'>(expires 11/13)</div>
+    </li>
+</ul>
+
 </body>
 </html>

@@ -199,9 +199,9 @@ body {
       display: none;
     }
 
-    div#multi_instrument_list {
-        height: 155px;
-        overflow: hidden;
+    #multi_instrument_list {
+      max-height: 160px;
+      overflow: auto;
     }
 
     #notlogged p {
@@ -357,6 +357,9 @@ div.card_expired {
     color: #f44;
 }
 
+#big_list, #small_list {
+  display: none;
+}
 div.lineitems {
     max-height: 94px;
     overflow: auto;
@@ -377,4 +380,3 @@ div.item_price {
     float: right;
     margin-top: 4px;
 }
-
