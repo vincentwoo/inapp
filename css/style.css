@@ -98,6 +98,14 @@ body {
       border-bottom: 1px solid #ccc;
       padding: 15px 15px 10px 15px;
     }
+    #iteminfo_quantity {
+      border-bottom: 1px solid #ccc;
+      padding: 15px 15px 10px 15px;
+    }
+    #iteminfo_quantity_price {
+      font-weight: bold;
+      font-size: 14px;
+    }
     #iteminfo_multi {
       border-bottom: 1px solid #ccc;
       padding: 15px 10px 0px 10px;
@@ -126,7 +134,7 @@ body {
       background-size: contain;
     }
       #cost {
-        width: 50%;
+        width: 55%;
         font-size: 15px;
         float: left;
         position: relative;
@@ -364,7 +372,7 @@ div.lineitems {
 }
 
 div.item_data {
-    width: 230px;
+    width: 200px;
     margin-bottom: 2px;
     float: left;
 }
@@ -372,8 +380,8 @@ div.item_data {
 div.item_name {
     float: left;
     margin-top: 4px;
-    width: 170px;
-    max-width: 170px;
+    width: 150px;
+    max-width: 150px;
     white-space: nowrap;
     overflow: hidden;
 }
