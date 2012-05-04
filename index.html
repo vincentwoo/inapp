@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="css/kd_components_google.css" type="text/css" media="screen" charset="utf-8">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="loader.js"></script>
 <script type="text/javascript">
 $(function() {
   $('#button').click(start);
@@ -23,16 +24,7 @@ $(function() {
     slideToggle();
   });
 
-  $('#buybutton').click(function() {
-    slideIn();
-    $('#basepanel').hide();
-    $('#receipt_total').text($('#total_price').text());
-    $('#receipt_seller').text('Rovio Mobile Gaming, Inc.');
-    $('#receipt_instrument').text('Visa ***-4323');
-    $('#receipt_date').text('Apr 30, 2012');
-    $('#closebutton').show();
-    $('#receipt').show();
-  })
+  $('#buybutton').click(handleBuy);
 
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
@@ -162,6 +154,26 @@ function slideOut() {
   $('#right').css('opacity', '1');
   $('#email').css('right', '7%');
   $('#cardchange').addClass('active');
+}
+
+function handleBuy() {
+  slideIn();
+  $('#basepanel').hide();
+  
+  $('#progress').slideDown('fast', function() {
+    var ai = new ActivityIndicator();
+    ai.start();
+    setTimeout(function() {
+      ai.stop();
+      $('#progress').hide();
+      $('#receipt_total').text($('#total_price').text());
+      $('#receipt_seller').text('Rovio Mobile Gaming, Inc.');
+      $('#receipt_instrument').text('Visa ***-4323');
+      $('#receipt_date').text('Apr 30, 2012');
+      $('#closebutton').show();
+      $('#receipt').slideDown();
+    }, 5000);
+  })
 }
 
 function addInstrumentDone() {
@@ -339,7 +351,67 @@ function scrollTo(current, target, callback) {
           </div>
           <div style="clear:both"></div>
         </div>
+
         <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
+      </div>
+      
+      <div id="progress">
+        <div style="margin: 10px 0 10px 15px">
+        <div id="loader" style="float: left; margin-right: 15px">
+      		<div class="circle initial">
+      			<span class="mask">
+      				<span class="mover"></span>
+      			</span>
+      		</div>
+
+      		<div class="circle red">
+      			<span class="mask first">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      			<span class="mask second">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      		</div>
+
+      		<div class="circle yellow">
+      			<span class="mask first">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      			<span class="mask second">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      		</div>
+
+      		<div class="circle green">
+      			<span class="mask first">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      			<span class="mask second">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      		</div>
+
+      		<div class="circle blue">
+      			<span class="mask first">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      			<span class="mask second">
+      				<span class="base"></span>
+      				<span class="mover"></span>
+      			</span>
+      		</div>
+
+      		<span class="bolt"></span>
+      	</div><!--end loader-->
+      	<h3>Processing your purchase...</h3>
+      	</div>
       </div>
 
       <div id='receipt'>
