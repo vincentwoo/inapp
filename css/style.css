@@ -438,3 +438,14 @@ div.item_price {
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
 }
+
+.single_item_name {
+    width: 155px;
+    max-width: 155px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
