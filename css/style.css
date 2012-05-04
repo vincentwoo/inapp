@@ -367,7 +367,7 @@ div.card_expired {
   display: none;
 }
 div.lineitems {
-    max-height: 220px;
+    max-height: 215px;
     overflow: auto;
 }
 
