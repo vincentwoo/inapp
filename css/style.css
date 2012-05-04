@@ -97,12 +97,19 @@ body {
     }
     #iteminfo_multi {
       border-bottom: 1px solid #ccc;
-      padding: 15px 15px 10px 15px;
+      padding: 15px 10px 0px 10px;
       display: none;
     }
       #itemimage {
         width: 100px;
         height: 100px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        float: left;
+      }
+      #itemimage_multi {
+        width: 32px;
+        height: 32px;
         margin-right: 10px;
         border: 1px solid #ccc;
         float: left;
@@ -352,4 +359,24 @@ div.card_expired {
 
 #big_list, #small_list {
   display: none;
+}
+div.lineitems {
+    max-height: 94px;
+    overflow: auto;
+}
+
+div.item_data {
+    width: 230px;
+    margin-bottom: 2px;
+    float: left;
+}
+
+div.item_name {
+    float: left;
+    margin-top: 4px;
+}
+
+div.item_price {
+    float: right;
+    margin-top: 4px;
 }

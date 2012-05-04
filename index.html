@@ -85,10 +85,16 @@ function start () {
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
   $('#multi_instrument_list').empty();
+  $('#iteminfo_multi').hide();
 
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
   if (state == 'newuser') $('#newuser').show();
+
+  if (state == 'logged_multi_line') {
+    $('#iteminfo_multi').show();
+    $('#iteminfo_one').hide();
+  }
   
   $('#buyflow').fadeIn('fast', function() {
     if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line') {
@@ -129,21 +135,28 @@ function slideOut() {
 
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
-    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'));
+    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
   }
+  else appendInstrument();
+}
+
+function appendInstrument() {
   var cloned = $('#clone_visa').clone();
   cloned.attr('id', '');
-  $('#multi_instrument_list ul').append(cloned);
+  $('#multi_instrument_list ul').prepend(cloned);
   $('.instrument_list li').removeClass('card_line_selected');
   cloned.addClass('card_line_selected');
   updateCardThumb(cloned);
+  cloned.hide();
+  cloned.slideDown();
+  $('#multi_instrument_list').scrollTop(0);
 }
 
 function loginDone() {
 
 }
 
-function scrollTo(current, target) {
+function scrollTo(current, target, callback) {
   var right = $('#right');
   right.css('-webkit-transition-property', 'height, left');
   target.show();
@@ -152,15 +165,16 @@ function scrollTo(current, target) {
   right.animate({
       scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
     },
-    1000,
+    750,
     function () {
       current.hide();
       target.css('height', 'auto');
-      //right.css('height', target.outerHeight() + 20);
+      right.css('height', target.outerHeight() + 30);
       setTimeout(function() {
-        //right.css('-webkit-transition-property', 'left');
+        right.css('-webkit-transition-property', 'left');
         right.css('height', 'auto');
-      }, 1000);
+        callback();
+      }, 500);
     });
 }
 </script>
@@ -197,11 +211,50 @@ function scrollTo(current, target) {
         <div style="clear:both"></div>
       </div>
       <div id="iteminfo_multi">
-        <img id="itemimage" src="images/eagle.png" />
-        <b>A Mighty Eagle</b>
-        <p>
-          A mighty eagle decimates your enemies with deadly precision - buy one today.
-        </p>
+        <div class='lineitems'>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>A Mighty Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$1.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>A Mightier Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$2.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>Even Mightier Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$3.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>The Mightiest Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$4.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/eagle.png" />
+                  <div class='item_name'><b>Super Mightiest Eagle</b></div>
+              </div>
+              <div class='item_price'><b>$5.99</b></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/honeybadger.jpg" />
+                  <div class='item_name'><b>Honey Badger</b></div>
+              </div>
+              <div class='item_price'><b>$499.99</b></div>
+          </div>
+        </div>
         <div style="float: right">
           Sold by <b>Rovio</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
