@@ -199,13 +199,15 @@ function scrollTo(current, target, callback) {
 
 <body>
 <div id="main">
-  <div id="config">
-    <input type="radio" name="state" value="logged_multi_quantity"> Single Item/Multi Quantity<br /> 
-    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item/Quantity<br /> 
+  <div id="config_flow">
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
     <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="newuser"> New user <br />
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
+  </div>
+  <div id="config_purchase_types">
+    <input type="radio" name="state" value="logged_multi_quantity"> Single Item/Multi Quantity<br /> 
+    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item/Quantity<br /> 
   </div>
   <div id="button"></div>
 </div>

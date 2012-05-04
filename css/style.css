@@ -286,7 +286,7 @@ body {
         vertical-align: middle;
       }
   
-  #config {
+  #config_flow {
     border-radius: 15px;
     padding: 15px;
     background: #fff;
@@ -294,6 +294,13 @@ body {
     top: 200px;
     left: 200px;
   }
+  #config_purchase_types {
+    border-radius: 15px;
+    padding: 15px;
+    background: #fff;
+    position: absolute;
+    top: 200px;
+    left: 415px;
 
 ul.instrument_list {
     list-style-type: none;
