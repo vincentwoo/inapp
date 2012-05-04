@@ -374,6 +374,10 @@ div.item_data {
 div.item_name {
     float: left;
     margin-top: 4px;
+    width: 170px;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 div.item_price {
