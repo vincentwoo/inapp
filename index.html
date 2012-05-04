@@ -129,22 +129,23 @@ function start () {
     if (state != 'logged_one' && state != 'logged_multi') {
       slideOut();
       $('#buybutton').addClass('disabled');
-    } else {
-      if (state == 'logged_one') {
-        $('#showinstruments_one').show();
-        var cloned = $('#small_list').clone(true);
-        $('#multi_instrument_list').append(cloned);
-        cloned.show();
-        $('#right').css('height', '259px');
-      } else {
-        var cloned = $('#big_list').clone(true);
-        $('#multi_instrument_list').append(cloned);
-        cloned.show();
-        $('#showinstruments_multi').show();
-      }
-      $('#cardchange').show();
-      $('#buybutton').removeClass('disabled');
     }
+    if (state == 'logged_multi') {
+      var cloned = $('#big_list').clone(true);
+      $('#multi_instrument_list').append(cloned);
+      cloned.show();
+      $('#showinstruments_multi').show();
+    } else {
+      var cloned = $('#small_list').clone(true);
+      $('#multi_instrument_list').append(cloned);
+      cloned.show();
+    }
+    if (state == 'logged_one') {
+      $('#showinstruments_one').show();
+    }
+    $('#cardchange').show();
+    $('#buybutton').removeClass('disabled');
+
   });
 }
 
@@ -168,7 +169,7 @@ function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
     scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
   } else if ($('#newuser').is(':visible')) {
-    scrollTo($('#newuser'), $('#showinstruments_one'), appendInstrument);
+    scrollTo($('#newuser'), $('#showinstruments_one'));
     $('#buybutton').removeClass('disabled');
   } else {
     appendInstrument();
