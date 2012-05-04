@@ -2,8 +2,8 @@ i'm starring items i think are truly must-dos by demo time
 
 *- Flexible merchant logo area (support for no logo)
 *- Flexible item image area (support for no logo)
-*- Multi line item
-*- Multi quantity
+*- Multi quantity on single item
+*- Multi quantity on multi line item
 *- Spinner?  (Different design spinner?)
 
 [done]- Plus icon/image on "Add New" on multi-instrument selector
@@ -14,7 +14,8 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Stub popup functionality of add instrument & login
 [done]- *** vs xxx on first part of CC numbers
 [done]- Pop back into iframe functionality from popup stubs
-[done]- Figure out how to make instrument selector scroll when > 4 instruments (twitter/fb/etc-style "v" and "^" buttons to scroll by 2, 3, 4 instruments at a time?)
+[done]- Figure out how to make instrument selector scroll when > 4 instruments (twitter/fb/etc-style "v" and "^" buttons to scroll by 2, 3, 4 instruments at a time?) (nope: just a scrollbar)
+[done]- Multi line item
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
