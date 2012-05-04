@@ -20,6 +20,7 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Receipt view after purchase
 [done]- Flexible left frame area (height, shadow, etc.)
 [done]- Deal with item names that are longer than fits in the current box
+[done]- Deal with item descriptions that are longer than fits in the current box
 [done]- Tax/Total area fitting to size of content within it (shrinking if no tax, e.g.)
 [done]- Log in => New user => Single instrument => Multi instrument flow: fix on final step (single instrument to multi instrument)
 [done]- Transitions between buy button, 'processing' page, and receipt panel
@@ -27,9 +28,8 @@ i'm starring items i think are truly must-dos by demo time
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
-- Deal with item descriptions that are longer than fits in the current box
 - Support multiple currencies
-- Clean support for clicking away from popup while it's up for either reason
+- Clean support for clicking away from popup while it's up for either reason (login or add instrument)
 
 - Non-functional cards
 - Stored value cards
