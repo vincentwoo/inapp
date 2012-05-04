@@ -383,6 +383,9 @@ div.item_name {
     max-width: 150px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
 }
 
 div.item_price {
@@ -426,9 +429,12 @@ div.item_price {
     margin-bottom: 0px;
 }
 
-#receipt_seller {
-    width: 175px;
-    max-width: 175px;
+#receipt_seller, #receipt_date {
+    width: 135px;
+    max-width: 135px;
     white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
 }
