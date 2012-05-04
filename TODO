@@ -2,9 +2,6 @@ i'm starring items i think are truly must-dos by demo time
 
 *- Flexible merchant logo area (support for no logo)
 *- Flexible item image area (support for no logo)
-*- Spinner?  (Different design spinner?)
-*- Transitions between buy button, 'processing' page, and receipt panel
-*- Log in => New user => Single instrument => Multi instrument flow: fix on final step (single instrument to multi instrument)
 
 [done]- Plus icon/image on "Add New" on multi-instrument selector
 [done]- "X" close in top-right of main frame
@@ -24,6 +21,9 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Flexible left frame area (height, shadow, etc.)
 [done]- Deal with item names that are longer than fits in the current box
 [done]- Tax/Total area fitting to size of content within it (shrinking if no tax, e.g.)
+[done]- Log in => New user => Single instrument => Multi instrument flow: fix on final step (single instrument to multi instrument)
+[done]- Transitions between buy button, 'processing' page, and receipt panel
+[done]- Spinner?  (Different design spinner?)
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
