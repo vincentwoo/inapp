@@ -2,6 +2,9 @@ a, a:link {
   color: #1155CC;
   text-decoration: none;
 }
+h3 {
+  font-weight: bold;
+}
 * {
   margin: 0;
   padding: 0;
@@ -202,11 +205,6 @@ body {
     #multi_instrument_list {
       max-height: 160px;
       overflow: auto;
-    }
-
-    #notlogged p {
-        padding-top: 15px;
-        font-weight: bold;
     }
 
     #showinstruments_one p {

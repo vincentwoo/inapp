@@ -23,33 +23,6 @@ $(function() {
     slideToggle();
   });
 
-/*  // Deprecated code for click-to-scroll on n-element instrument lists
-  var top_scroll = 0;
-
-  var scroll_ul = function(offset) {
-    var to_scroll = $('#multi_instrument_list').find('ul');
-    var scroll_distance = $('#multi_instrument_list').find('li').outerHeight(true);
-
-    var listcount = $('li').size();
-    var max_scroll = ((listcount - 5) * scroll_distance) * -1;
-
-    if (top_scroll >= 0 && offset < 0) return;
-    if (top_scroll < max_scroll && offset > 0) return;
-
-    top_scroll -= (offset * scroll_distance);
-
-    to_scroll.animate({ "marginTop": "-=" + (offset * scroll_distance) + "px" }, "fast");
-  }
-
-  $('#down').click(function() {
-    scroll_ul(1);
-  });
-
-  $('#up').click(function() {
-    scroll_ul(-1);
-  });
-*/
-
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
     $('.instrument_list li').removeClass('card_line_selected');
@@ -166,6 +139,8 @@ function slideOut() {
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
     scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
+  } else if ($('#newuser').is(':visible')) {
+    scrollTo($('#newuser'), $('#showinstruments_one'), appendInstrument);
   }
   else appendInstrument();
 }
@@ -183,15 +158,16 @@ function appendInstrument() {
 }
 
 function loginDone() {
-
+  scrollTo($('#notlogged'), $('#newuser'));
 }
 
 function scrollTo(current, target, callback) {
   var right = $('#right');
+  right.css('height', right.outerHeight() + 'px');
+  target.css('height', right.outerHeight() + 'px');
+  setTimeout(function(){
   right.css('-webkit-transition-property', 'height, left');
   target.show();
-  target.css('height', right.outerHeight() + 'px');
-    console.log(target.css('height'));
   right.animate({
       scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
     },
@@ -203,9 +179,10 @@ function scrollTo(current, target, callback) {
       setTimeout(function() {
         right.css('-webkit-transition-property', 'left');
         right.css('height', 'auto');
-        callback();
+        if (callback) callback();
       }, 500);
     });
+  }, 250);
 }
 </script>
 </head>
@@ -215,8 +192,8 @@ function scrollTo(current, target, callback) {
   <div id="config">
     <input type="radio" name="state" value="logged_multi_line"> Multi Line Item<br /> 
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
-    <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
-    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
+    <input type="radio" name="state" value="logged_one"> Logged in (1 instrument)<br /> 
+    <input type="radio" name="state" value="notlogged" checked> Not Logged in <br />
     <input type="radio" name="state" value="newuser"> New user <br />
   </div>
   <div id="button"></div>
@@ -320,6 +297,7 @@ function scrollTo(current, target, callback) {
           To ensure your security, you must log in to Google Wallet.<br /><br />Please click the button below to log in.
         </p>
         <div class="kd-button kd-button-submit loginbutton" style="float: right; margin: 10px">Log In in a new window</div>
+        <div style="clear: both"></div>
       </div>
       
       <div id="newuser">
@@ -333,7 +311,7 @@ function scrollTo(current, target, callback) {
             Add card in a new window
           </div>
         </div>
-
+        <div style="clear: both"></div>
       </div>
 
       <div id="showinstruments_one">
