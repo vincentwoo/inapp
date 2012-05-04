@@ -10,7 +10,7 @@
 $(function() {
   $('#button').click(start);
 
-  $('#buybg, #close').click(function() {
+  $('#buybg, #close, #closebutton').click(function() {
     $('#buyflow').fadeOut('fast');
   });
 
@@ -22,6 +22,15 @@ $(function() {
     }
     slideToggle();
   });
+
+  $('#buybutton').click(function() {
+    $('#basepanel').hide();
+    $('#receipt_total').text($('#total_price').text());
+    $('#receipt_seller').text('Rovio');
+    $('#receipt_instrument').text('Visa ***-4323');
+    $('#receipt_date').text('May 3, 2012');
+    $('#receipt').show();
+  })
 
   $('.instrument_list li').click(function() {
     if ($(this).attr("class") == "expired") return;
@@ -58,6 +67,8 @@ function start () {
   $('#cardchange').hide();
   $('#showinstruments_one').hide();
   $('#showinstruments_multi').hide();
+  $('#receipt').hide();
+  $('#basepanel').show();
   $('#multi_instrument_list').empty();
 
   if (items == 'multi_line') {
@@ -302,27 +313,51 @@ function scrollTo(current, target, callback) {
         </div>
         <div style="clear:both"></div>
       </div>
-      
-      <div id="sellerinfo">
-        <div id="cost">
-            <div id='summary_items'>
-              <span id='subtotal_label'>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
-              <span id='taxes_label'>taxes <b><span id='taxes_price'>$0.16</span></b></span>
-            </div>
-            <span id="total">total <b><span id='total_price'>$2.15</span></b></span>
-        </div>
+      <div id='basepanel'>
 
-        <div class="kd-button" id="cardchange">
-          <img src='images/cc_master.png' />
-          **-9998
-          <div class='cardarrow_box'>
-            <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />
+        <div id="sellerinfo">
+          <div id="cost">
+              <div id='summary_items'>
+                <span id='subtotal_label'>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
+                <span id='taxes_label'>taxes <b><span id='taxes_price'>$0.16</span></b></span>
+              </div>
+              <span id="total">total <b><span id='total_price'>$2.15</span></b></span>
+          </div>
+
+          <div class="kd-button" id="cardchange">
+            <img src='images/cc_master.png' />
+            **-9998
+            <div class='cardarrow_box'>
+              <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />
+            </div>
+          </div>
+
+        </div>
+        <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
+      </div>
+
+      <div id='receipt'>
+        <div id='receipt_summary'>
+          Your purchase was successful!  Rejoice!<br />
+          <div id='receipt_left'>
+            <span id='amount'>amount</span>
+            <span id='receipt_total'>$</span>
+            <br />
+            <span id='method'>paid from</span>
+            <span id='receipt_instrument'> </span>
+          </div>
+          <div id='receipt_right'>
+            <span id='seller'>seller</span>
+            <span id='receipt_seller'> </span>
+            <br />
+            <span id='date'>date</span>
+            <span id='receipt_date'> </span>
           </div>
         </div>
-
+        <a id="closebutton" class="kd-button kd-button-submit">Back to My Game</a>
       </div>
-      <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
     </div>
+
     <div id="right">
       <a id="email">vwoo@google.com</a>
       
