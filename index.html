@@ -118,6 +118,9 @@ function start () {
     if (state != 'logged_one' && state != 'logged_multi') {
       slideOut();
       $('#buybutton').addClass('disabled');
+    } else {
+      $('#cardchange').show();
+      $('#buybutton').removeClass('disabled');
     }
     if (state == 'logged_multi') {
       var cloned = $('#big_list').clone(true);
@@ -132,9 +135,6 @@ function start () {
     if (state == 'logged_one') {
       $('#showinstruments_one').show();
     }
-    $('#cardchange').show();
-    $('#buybutton').removeClass('disabled');
-
   });
 }
 
