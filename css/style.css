@@ -73,20 +73,17 @@ body {
   }
 #frame {
   width: 635px;
-  height: 332px;
   position: absolute;
   margin-top: -175px;
   margin-left: -325px;
   top: 50%;
   left: 50%;
   z-index: 2;
-  overflow: hidden;
 }
   #left {
     position: absolute;
     left: 10px;
     top: 10px;
-    bottom: 10px;
     width: 50%;
     border: 1px solid #ACACAC;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -125,9 +122,9 @@ body {
       padding: 10px 15px 5px 15px;
       border-bottom: 1px solid #ccc;
       box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
-      height: 85px;
       background: #F1F1F1;
       background-size: contain;
+      position: relative;
     }
       #cost {
         width: 55%;
@@ -150,9 +147,10 @@ body {
             line-height: 30px;
           }
       #cardchange {
-        float: right;
-        margin-top:15px;
-        font-size: 14px;
+        position: absolute;
+        top: 50%;
+        margin-top: -13px;
+        right: 15px;
       }
      .cardarrow_box {
         display: inline-block;
@@ -178,18 +176,18 @@ body {
   #right {
     position: absolute;
     left: 50%;
+    opacity: 1;
     top: 50px;
     width: 290px;
     z-index: 4;
     overflow: hidden;
     background: #eee url('../images/exclusive_paper.png');
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 15px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     border: 1px solid #ACACAC;
     padding: 15px 15px 15px 25px;
     -webkit-transition-duration: 1s;
-    -webkit-transition-property: left;
+    -webkit-transition-property: left, opacity;
   }
     #email {
       position: absolute;
