@@ -92,10 +92,26 @@ function start () {
     $('#subtotal_price').text('$519.94');
     $('#taxes_price').text('$41.60');
     $('#total_price').text('$561.54');
+  } else if (state == 'logged_multi') {
+    $('#subtotal_price').text('$1.99');
+    $('#taxes_price').text('$0.00');
+    $('#total_price').text('$1.99');
   } else {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.16');
     $('#total_price').text('$2.15');
+  }
+
+  if ($('#total_price').text() == $('#subtotal_price').text()) {
+    $('#subtotal_label').hide();
+    $('#subtotal_price').hide();
+    $('#taxes_label').hide();
+    $('#taxes_price').hide();
+  } else {
+    $('#subtotal_label').show();
+    $('#subtotal_price').show();
+    $('#taxes_label').show();
+    $('#taxes_price').show();
   }
 
   if (state == 'notlogged') $('#notlogged').show();
@@ -257,8 +273,8 @@ function scrollTo(current, target) {
       </div>
       <div id="sellerinfo">
         <div id="cost">
-            <span>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
-            <span>taxes <b><span id='taxes_price'>$0.16</span></b></span>
+            <span id='subtotal_label'>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
+            <span id='taxes_label'>taxes <b><span id='taxes_price'>$0.16</span></b></span>
             <span id="total">total <b><span id='total_price'>$2.15</span></b></span>
         </div>
 
