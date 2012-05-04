@@ -212,11 +212,6 @@ body {
       max-height: 160px;
       overflow: auto;
     }
-
-    #showinstruments_one p {
-        font-weight: bold;
-    }
-
       #addcard {
         background-size: contain;
         background-repeat: no-repeat;

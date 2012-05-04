@@ -169,8 +169,10 @@ function addInstrumentDone() {
     scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), appendInstrument);
   } else if ($('#newuser').is(':visible')) {
     scrollTo($('#newuser'), $('#showinstruments_one'), appendInstrument);
+    $('#buybutton').removeClass('disabled');
+  } else {
+    appendInstrument();
   }
-  else appendInstrument();
 }
 
 function appendInstrument() {
@@ -186,6 +188,7 @@ function appendInstrument() {
 }
 
 function loginDone() {
+  $('#email').show();
   scrollTo($('#notlogged'), $('#newuser'));
 }
 
