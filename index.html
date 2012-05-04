@@ -88,6 +88,16 @@ function start () {
   $('#showinstruments_multi').hide();
   $('#iteminfo_multi').hide();
 
+  if (state == 'logged_multi_line') {
+    $('#subtotal_price').text('$519.94');
+    $('#taxes_price').text('$41.60');
+    $('#total_price').text('$561.54');
+  } else {
+    $('#subtotal_price').text('$1.99');
+    $('#taxes_price').text('$0.16');
+    $('#total_price').text('$2.15');
+  }
+
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
   if (state == 'newuser') $('#newuser').show();
@@ -95,6 +105,9 @@ function start () {
   if (state == 'logged_multi_line') {
     $('#iteminfo_multi').show();
     $('#iteminfo_one').hide();
+  } else if (state == 'logged_multi') {
+    $('#iteminfo_one').show();
+    $('#iteminfo_multi').hide();
   }
   
   $('#buyflow').fadeIn('fast', function() {
@@ -244,9 +257,9 @@ function scrollTo(current, target) {
       </div>
       <div id="sellerinfo">
         <div id="cost">
-            <span>subtotal <b>$1.99</b></span>
-            <span>taxes <b>$0.13</b></span>
-            <span id="total">total <b>$2.12</b></span>
+            <span>subtotal <b><span id='subtotal_price'>$1.99</span></b></span>
+            <span>taxes <b><span id='taxes_price'>$0.16</span></b></span>
+            <span id="total">total <b><span id='total_price'>$2.15</span></b></span>
         </div>
 
         <div class="kd-button" id="cardchange">
