@@ -451,6 +451,17 @@ div.item_price {
     -ms-text-overflow: ellipsis;
 }
 
+.single_item_description {
+    font-size: 13px;
+    line-height: 18px;
+    max-height: 98px;
+    overflow: scroll;
+}
+
+.single_item_quantity {
+    float: right;
+}
+
 .card_type_name {
     padding-left: 5px;
     vertical-align: top;
