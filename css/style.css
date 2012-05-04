@@ -426,21 +426,12 @@ div.item_price {
     display: inline-block;
 }
 
-#receipt_total, #receipt_instrument {
+#receipt_total, #receipt_instrument, #receipt_seller, #receipt_date {
     font-weight: bold;
     font-size: 15px;
     display: block;
     padding-bottom: 0px;
     margin-bottom: 0px;
-}
-
-#receipt_seller, #receipt_date {
-    font-weight: bold;
-    font-size: 15px;
-    display: block;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    float: right;
 }
 
 #receipt_seller {
