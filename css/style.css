@@ -390,16 +390,8 @@ div.item_price {
     margin-top: 4px;
 }
 
-#summary_items {
-    height: 36px;
-}
-
 #receipt {
     display: none;
-}
-
-#receipt_summary {
-    height: 73px;
 }
 
 #receipt_left {
