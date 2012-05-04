@@ -69,9 +69,9 @@ function start () {
   $('#multi_instrument_list').empty();
 
   if (items == 'multi_line') {
-    $('#subtotal_price').text('$5,024.84');
+    $('#subtotal_price').text('$5,024.85');
     $('#taxes_price').text('$401.99');
-    $('#total_price').text('$5,426.83');
+    $('#total_price').text('$5,426.84');
   } else if (items == 'single_quantity') {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.00');
@@ -374,6 +374,13 @@ function scrollTo(current, target, callback) {
                   <div class='item_name'><b>Honey Badger</b></div>
               </div>
               <div class='item_price'><b>$499.99</b> <span class='quantity'>x10</span></div>
+          </div>
+          <div class='lineitem'>
+              <div class='item_data'>
+                  <img id="itemimage_multi" src="images/secret_item.png" />
+                  <div class='item_name'><b>Pali</b></div>
+              </div>
+              <div class='item_price'><b>$0.01</b></div>
           </div>
         </div>
         <div style="float: right">
