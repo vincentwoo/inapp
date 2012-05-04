@@ -102,10 +102,6 @@ body {
       border-bottom: 1px solid #ccc;
       padding: 15px 15px 10px 15px;
     }
-    #iteminfo_quantity_price {
-      font-weight: bold;
-      font-size: 14px;
-    }
     #iteminfo_multi {
       border-bottom: 1px solid #ccc;
       padding: 15px 10px 0px 10px;

@@ -50,6 +50,7 @@ function updateCardThumb(card) {
 
 function start () {
   var state = $('input:radio[name=state]:checked').val();
+  var items = $('input:radio[name=items]:checked').val();
   slideIn();
   $('#email').hide();
   $('#notlogged').hide();
@@ -59,7 +60,7 @@ function start () {
   $('#showinstruments_multi').hide();
   $('#multi_instrument_list').empty();
 
-  if (state == 'logged_multi_line') {
+  if (items == 'multi_line') {
     $('#subtotal_price').text('$5,024.84');
     $('#taxes_price').text('$401.99');
     $('#total_price').text('$5,426.83');
@@ -67,7 +68,7 @@ function start () {
     $('#subtotal_price').text('$1.99');
     $('#taxes_price').text('$0.00');
     $('#total_price').text('$1.99');
-  } else if (state == 'logged_multi_quantity') {
+  } else if (items == 'multi_quantity') {
     $('#subtotal_price').text('$7.96');
     $('#taxes_price').text('$0.64');
     $('#total_price').text('$8.60');
@@ -93,21 +94,15 @@ function start () {
 
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
-  if (state == 'newuser') $('#newuser').show();
-
-  if (state == 'logged_multi_line') {
+  
+  if (state == 'newuser') {
+    $('#newuser').show();
+  }
+  if (items == 'multi_line') {
     $('#iteminfo_multi').show();
     $('#iteminfo_one').hide();
     $('#iteminfo_quantity').hide();
-/*
-    $('.item_name').each(function() {
-      alert($(this).width());
-      alert($(this).outerWidth(true));
-      alert($(this)[0].clientWidth);
-      alert($(this)[0].scrollWidth);
-    });
-*/
-  } else if (state == 'logged_multi_quantity') {
+  } else if (items == 'multi_quantity') {
     $('#iteminfo_one').hide();
     $('#iteminfo_quantity').show();
     $('#iteminfo_multi').hide();
@@ -118,7 +113,7 @@ function start () {
   }
   
   $('#buyflow').fadeIn('fast', function() {
-    if (state != 'logged_one' && state != 'logged_multi' && state != 'logged_multi_line' && state != 'logged_multi_quantity') {
+    if (state != 'logged_one' && state != 'logged_multi') {
       slideOut();
       $('#buybutton').addClass('disabled');
     } else {
@@ -214,8 +209,8 @@ function scrollTo(current, target, callback) {
     <input type="radio" name="state" value="notlogged"> Not Logged in <br />
   </div>
   <div id="config_purchase_types">
-    <input type="radio" name="state" value="logged_multi_quantity"> Single Item/Multi Quantity<br /> 
-    <input type="radio" name="state" value="logged_multi_line"> Multi Line Item/Quantity<br /> 
+    <input type="radio" name="items" value="multi_quantity" checked> Single Item/Multi Quantity<br /> 
+    <input type="radio" name="items" value="multi_line"> Multi Line Item/Quantity<br /> 
   </div>
   <div id="button"></div>
 </div>
@@ -226,18 +221,21 @@ function scrollTo(current, target, callback) {
       <div id="butter">
         <img src="images/x_close.gif" id="close" />
       </div>
+      
       <div id="iteminfo_quantity">
         <img id="itemimage" src="images/eagle.png" />
-        <b>A Mighty Eagle (Qty: 4)</b>
+        <b>A Mighty Eagle</b>
         <p>
-          A mighty eagle decimates your enemies with deadly precision - buy one today. <span id='iteminfo_quantity_price'>($1.99 each)</span>
+          A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
+        Qty: <b>4</b> x <b>$1.99</b> each</span>
         <div style="float: right">
           Sold by <b>Rovio</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
         <div style="clear:both"></div>
       </div>
+      
       <div id="iteminfo_one">
         <img id="itemimage" src="images/eagle.png" />
         <b>A Mighty Eagle</b>
@@ -250,6 +248,7 @@ function scrollTo(current, target, callback) {
         </div>
         <div style="clear:both"></div>
       </div>
+      
       <div id="iteminfo_multi">
         <div class='lineitems'>
           <div class='lineitem'>
@@ -301,6 +300,7 @@ function scrollTo(current, target, callback) {
         </div>
         <div style="clear:both"></div>
       </div>
+      
       <div id="sellerinfo">
         <div id="cost">
             <div id='summary_items'>
