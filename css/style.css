@@ -193,8 +193,10 @@ body {
   }
     #email {
       position: absolute;
-      top: -20px;
-      right: 15px;
+      top: 30px;
+      right: 50%;
+      -webkit-transition-duration: 1s;
+      -webkit-transition-property: right;
     }
     #right h3 {
       padding-left: 15px;

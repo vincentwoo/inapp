@@ -108,6 +108,8 @@ function start () {
   if (state == 'notlogged') $('#notlogged').show();
   else $('#email').show();
   
+  $('#email').show();
+  
   if (state == 'newuser') {
     $('#newuser').show();
   }
@@ -155,10 +157,12 @@ function slideToggle() {
 
 function slideIn() {
   $('#right').css('left', '8%');
+  $('#email').css('right', '50%');
   $('#cardchange').removeClass('active');
 }
 function slideOut() {
   $('#right').css('left', '50%');
+  $('#email').css('right', '7%');
   $('#cardchange').addClass('active');
 }
 
@@ -360,9 +364,8 @@ function scrollTo(current, target, callback) {
       <a id="closebutton" class="kd-button kd-button-submit">Back to My Game</a>
     </div>
 
+    <a id="email">vwoo@google.com</a>
     <div id="right">
-      <a id="email">vwoo@google.com</a>
-      
       <div id="notlogged">
         <h3>Security Check Required</h3>
         <p>
