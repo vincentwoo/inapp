@@ -97,12 +97,10 @@ function start () {
     $('#summary_items').hide();
     $('#taxes_label').hide();
     $('#taxes_price').hide();
-    //$('#summary_items').height(14);
   } else {
     $('#summary_items').show();
     $('#taxes_label').show();
     $('#taxes_price').show();
-    //$('#summary_items').height(36);
   }
 
   if (state == 'notlogged') $('#notlogged').show();
@@ -156,11 +154,13 @@ function slideToggle() {
 
 function slideIn() {
   $('#right').css('left', '8%');
+  $('#right').css('opacity', '.5');
   $('#email').css('right', '50%');
   $('#cardchange').removeClass('active');
 }
 function slideOut() {
   $('#right').css('left', '50%');
+  $('#right').css('opacity', '1');
   $('#email').css('right', '7%');
   $('#cardchange').addClass('active');
 }
@@ -402,9 +402,9 @@ function scrollTo(current, target, callback) {
           </div>
         </div>
         <p style="clear:both">
-          You currently have only one valid payment method stored in your Google Wallet.  To add another, click the button below.
+          This is the card that will be charged for this transaction. To add another, click the button below.
         </p>
-        <div class="kd-button addcardbutton" style="float:right; margin-bottom: 20px">
+        <div class="kd-button addcardbutton" style="float:right; margin-bottom: 15px">
           <div>
             Add card in a new window
           </div>
