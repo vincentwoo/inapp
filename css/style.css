@@ -416,11 +416,38 @@ div.item_price {
     padding-bottom: 0px;
 }
 
-#amount, #method, #seller, #date {
+#amount, #method {
     font-size: 12px;
+    width: 52px;
+    display: inline-block;
 }
 
-#receipt_total, #receipt_seller, #receipt_instrument, #receipt_date {
+#seller, #date {
+    font-size: 12px;
+    width: 28px;
+    display: inline-block;
+}
+
+#receipt_total, #receipt_instrument {
     font-weight: bold;
     font-size: 15px;
+    display: block;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+#receipt_seller, #receipt_date {
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+#receipt_seller {
+    width: 175px;
+    max-width: 175px;
+    white-space: nowrap;
+    overflow: hidden;
 }

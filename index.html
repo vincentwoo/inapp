@@ -28,7 +28,7 @@ $(function() {
     $('#receipt_total').text($('#total_price').text());
     $('#receipt_seller').text('Rovio');
     $('#receipt_instrument').text('Visa ***-4323');
-    $('#receipt_date').text('May 3, 2012');
+    $('#receipt_date').text('Apr 30, 2012');
     $('#closebutton').show();
     $('#receipt').show();
   })
@@ -222,9 +222,9 @@ function scrollTo(current, target, callback) {
 <div id="main">
   <div id="config_flow">
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
-    <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
+    <input type="radio" name="state" value="logged_one"> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="newuser"> New user <br />
-    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
+    <input type="radio" name="state" value="notlogged" checked> Not Logged in <br />
   </div>
   <div id="config_purchase_types">
     <input type="radio" name="items" value="single_quantity_tax" checked> Single Item x 1 [tax]<br /> 
@@ -250,7 +250,7 @@ function scrollTo(current, target, callback) {
         </p>
         Qty: <b>4</b> x <b>$1.99</b> each</span>
         <div style="float: right">
-          Sold by <b>Rovio</b>
+          Sold by <b>Rovio Mobile Gaming, Inc.</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
         <div style="clear:both"></div>
@@ -263,7 +263,7 @@ function scrollTo(current, target, callback) {
           A mighty eagle decimates your enemies with deadly precision - buy one today.
         </p>
         <div style="float: right">
-          Sold by <b>Rovio</b>
+          Sold by <b>Rovio Mobile Gaming, Inc.</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
         <div style="clear:both"></div>
@@ -315,7 +315,7 @@ function scrollTo(current, target, callback) {
           </div>
         </div>
         <div style="float: right">
-          Sold by <b>Rovio</b>
+          Sold by <b>Rovio Mobile Gaming, Inc.</b>
           <img src="images/logo_rovio.png" style="vertical-align: middle; height: 35px; width: auto" />
         </div>
         <div style="clear:both"></div>
@@ -349,14 +349,12 @@ function scrollTo(current, target, callback) {
           <div id='receipt_left'>
             <span id='amount'>amount</span>
             <span id='receipt_total'>$</span>
-            <br />
             <span id='method'>paid from</span>
             <span id='receipt_instrument'> </span>
           </div>
           <div id='receipt_right'>
             <span id='seller'>seller</span>
             <span id='receipt_seller'> </span>
-            <br />
             <span id='date'>date</span>
             <span id='receipt_date'> </span>
           </div>
