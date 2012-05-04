@@ -25,6 +25,10 @@ i'm starring items i think are truly must-dos by demo time
 [done]- Log in => New user => Single instrument => Multi instrument flow: fix on final step (single instrument to multi instrument)
 [done]- Transitions between buy button, 'processing' page, and receipt panel
 [done]- Spinner?  (Different design spinner?)
+[done]- Loader page
+[done]- Remove top bar
+[done]- Hide right panel if can't be interacted with (receipt view, e.g.)
+[done]- Auto-select instrument & hide selector after adding new instrument
 
 - Find way to make change instrument button look more change-y
 - A/B test toggle on "Buy Now" being full-size or having a ~5px margin (more button-y)
