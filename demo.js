@@ -147,21 +147,17 @@ function showFrame() {
 function slideToggle() {
     //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_flip.png');
     //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
-  if ($('#right').css('left') == '8%') slideOut();
-  else slideIn();
+  if ($('#slider').is(':visible')) slideIn();
+  else slideOut();
 }
 
 function slideIn() {
-  $('#right').css('left', '8%');
-  $('#right').css('opacity', '.5');
-  $('#email').css('right', '50%');
   $('#cardchange').removeClass('active');
+  $('#slider').slideUp();
 }
 function slideOut() {
-  $('#right').css('left', '50%');
-  $('#right').css('opacity', '1');
-  $('#email').css('right', '7%');
   $('#cardchange').addClass('active');
+  $('#slider').slideDown();
 }
 
 function handleBuy() {

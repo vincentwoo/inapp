@@ -111,17 +111,10 @@ body {
     background: #fff;
     border-radius: 8px;
   }
-    #iteminfo_one {
-      border-bottom: 1px solid #ccc;
+    #iteminfo_one, #iteminfo_quantity, #iteminfo_multi {
       padding: 15px 15px 10px 15px;
     }
-    #iteminfo_quantity {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 15px 5px 15px;
-    }
     #iteminfo_multi {
-      border-bottom: 1px solid #ccc;
-      padding: 15px 10px 0px 10px;
       display: none;
     }
       #itemimage {
@@ -201,6 +194,7 @@ body {
     background: #F9EDBE;
     padding: 15px;
     box-shadow: inset 0px 1px 2px rgba(0,0,0,0.1);
+    border-top: 1px solid #ccc;
     display:none;
   }
     #email {
