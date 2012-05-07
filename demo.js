@@ -8,11 +8,8 @@ $(function() {
   });
 
   $('#cardchange').click(function() {
-    if ($('#right').css('left') == '8%') {
-        $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_flip.png');
-    } else {
-        $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
-    }
+
+    
     slideToggle();
   });
 
@@ -55,7 +52,7 @@ function start () {
         ai.stop();
         $('#loading').fadeOut();
         showFrame();
-      }, 2500);
+      }, 0/*2500*/);
     });
   });
 }
@@ -148,6 +145,8 @@ function showFrame() {
 }
 
 function slideToggle() {
+    //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_flip.png');
+    //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
   if ($('#right').css('left') == '8%') slideOut();
   else slideIn();
 }
