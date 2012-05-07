@@ -145,17 +145,17 @@ function showFrame() {
 }
 
 function slideToggle() {
-    //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_flip.png');
-    //$('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
   if ($('#slider').is(':visible')) slideIn();
   else slideOut();
 }
 
 function slideIn() {
+  $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey.png');
   $('#cardchange').removeClass('active');
   $('#slider').slideUp();
 }
 function slideOut() {
+  $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_down.png');
   $('#cardchange').addClass('active');
   $('#slider').slideDown();
 }
