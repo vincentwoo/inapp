@@ -99,13 +99,7 @@ function showFrame() {
     $('#taxes_label').show();
     $('#taxes_price').show();
   }
-
-  if (state == 'notlogged') $('#notlogged').show();
-  else $('#email').show();
   
-  if (state == 'newuser') {
-    $('#newuser').show();
-  }
   if (items == 'multi_line') {
     $('#iteminfo_multi').show();
     $('#iteminfo_one').hide();
@@ -119,29 +113,37 @@ function showFrame() {
     $('#iteminfo_quantity').hide();
     $('#iteminfo_multi').hide();
   }
-  
-  $('#frame').fadeIn('fast', function() {
-    if (state != 'logged_one' && state != 'logged_multi') {
-      slideOut();
-      $('#buybutton').addClass('disabled');
-    } else {
-      $('#cardchange').show();
-      $('#buybutton').removeClass('disabled');
-    }
-    if (state == 'logged_multi') {
-      var cloned = $('#big_list').clone(true);
-      $('#multi_instrument_list').append(cloned);
-      cloned.show();
-      $('#showinstruments_multi').show();
-    } else {
-      var cloned = $('#small_list').clone(true);
-      $('#multi_instrument_list').append(cloned);
-      cloned.show();
-    }
-    if (state == 'logged_one') {
-      $('#showinstruments_one').show();
-    }
-  });
+
+  if (state == 'notlogged') {
+    $('#notlogged').show();
+    showButton('loginbutton');
+    slideOut();
+  } else {
+    showButton('buybutton');
+  }
+  if (state == 'newuser') {
+    $('#newuser').show();
+    $('#buybutton').addClass('disabled');
+    slideOut();
+  }
+  if (state == 'logged_multi') {
+    $('#cardchange').show();
+    showButton('buybutton');
+    var cloned = $('#big_list').clone(true);
+    $('#multi_instrument_list').append(cloned);
+    cloned.show();
+    $('#showinstruments_multi').show();
+  } else {
+    var cloned = $('#small_list').clone(true);
+    $('#multi_instrument_list').append(cloned);
+    cloned.show();
+  }
+  if (state == 'logged_one') {
+    $('#cardchange').show();
+    showButton('buybutton');
+    $('#showinstruments_one').show();
+  }
+  $('#frame').fadeIn();
 }
 
 function slideToggle() {
@@ -158,6 +160,11 @@ function slideOut() {
   $('#cardarrow').attr('src', 'images/disclosure_arrow_dk_grey_down.png');
   $('#cardchange').addClass('active');
   $('#slider').slideDown();
+}
+
+function showButton(button) {
+  $('.bigbutton').hide();
+  $('#' + button).show();
 }
 
 function handleBuy() {

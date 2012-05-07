@@ -14,9 +14,9 @@
 <div id="main">
   <div id="config_flow">
     <input type="radio" name="state" value="logged_multi"> Logged in (n instruments)<br /> 
-    <input type="radio" name="state" value="logged_one" checked> Logged in (1 instrument)<br /> 
+    <input type="radio" name="state" value="logged_one"> Logged in (1 instrument)<br /> 
     <input type="radio" name="state" value="newuser"> New user <br />
-    <input type="radio" name="state" value="notlogged"> Not Logged in <br />
+    <input type="radio" name="state" value="notlogged" checked> Not Logged in <br />
   </div>
   <div id="config_purchase_types">
     <input type="radio" name="items" value="single_quantity_tax" checked> Single Item x 1 [tax]<br /> 
@@ -137,11 +137,7 @@
       <div id="slider">
         <div id="notlogged">
           <h3>Security Check Required</h3>
-          <p>
-            To ensure your security, you must log in to Google Wallet.<br /><br />Please click the button below to log in.
-          </p>
-          <div class="kd-button kd-button-submit loginbutton" style="float: right; margin: 10px">Log In in a new window</div>
-          <div style="clear: both"></div>
+          To ensure your security, you must log in to Google Wallet.
         </div>
         
         <div id="newuser">
@@ -204,8 +200,6 @@
           </div>
           <div style="clear:both"></div>
         </div>
-        <a id="buybutton" class="kd-button kd-button-submit">Buy Now</a>
-        
       </div>
       
       <div id="progress">
@@ -285,10 +279,10 @@
           <div style="clear:both"></div>
         </div>
       </div>
-      <a id="closebutton" class="kd-button kd-button-share">Back to Game</a>
+      <a id="buybutton" class="bigbutton kd-button kd-button-submit">Buy Now</a>
+      <a id="loginbutton" class="bigbutton kd-button kd-button-submit">Login</a>
+      <a id="closebutton" class="bigbutton kd-button kd-button-share">Back to Game</a>
     </div>
-
-    
   </div>
 </div>
 
