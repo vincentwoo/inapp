@@ -52,7 +52,7 @@ function start () {
         ai.stop();
         $('#loading').fadeOut();
         showFrame();
-      }, 0/*2500*/);
+      }, 2000);
     });
   });
 }
