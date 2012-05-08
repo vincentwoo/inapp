@@ -28,7 +28,7 @@ $(function() {
          'resizable=yes, scrollbars=yes, status=no, width=579, height=468');
   });
 
-  $('.loginbutton').click(function() {
+  $('#loginbutton').click(function() {
     open('login.html', 'login',
          'resizable=yes, scrollbars=yes, status=no, width=577, height=439');
   });
@@ -169,7 +169,8 @@ function showButton(button) {
 
 function handleBuy() {
   slideIn();
-  $('#right').css('opacity', '0');
+  $('#cardchange').hide();
+  showButton('none');
   $('#basepanel').hide();
   
   $('#progress').slideDown('fast', function() {
@@ -259,36 +260,35 @@ function appendInstrument(is_multi) {
   cloned.slideDown(400, function() {
     $('#multi_instrument_list').scrollTop(0);
     if (is_multi == true) {
-      slideIn();
+      setTimeout(slideIn, 1000);
     }
   });
 }
 
 function loginDone() {
-  $('#email').show();
+  showButton('buybutton');
+  $('#buybutton').addClass('disabled');
   scrollTo($('#notlogged'), $('#newuser'));
 }
 
 function scrollTo(current, target, callback) {
-  var right = $('#right');
-  right.css('height', right.outerHeight() + 'px');
-  target.css('height', right.outerHeight() + 'px');
-  setTimeout(function(){
-  right.css('-webkit-transition-property', 'height, left, opacity');
-  target.show();
-  right.animate({
-      scrollTop: target.offset().top - right.offset().top + right.scrollTop() - 15
-    },
-    750,
-    function () {
+  var slider = $('#slider');
+  var curHeight = current.outerHeight();
+  var targetHeight = target.outerHeight();
+  
+  function showTarget() {
+    current.height(targetHeight > curHeight ? targetHeight : curHeight);
+    target.show();
+    slider.animate({
+      scrollTop: target.offset().top - slider.offset().top + slider.scrollTop() - 15
+    }, 500, function () {
       current.hide();
-      target.css('height', 'auto');
-      right.css('height', target.outerHeight() + 30);
-      setTimeout(function() {
-        right.css('-webkit-transition-property', 'left, opacity');
-        right.css('height', 'auto');
-        if (callback) callback();
-      }, 500);
+      slider.css('height', 'auto');
+      if (callback) callback();
     });
-  }, 250);
+  }
+
+  slider.animate({
+    height: targetHeight > curHeight ? targetHeight : curHeight
+  }, 500, showTarget);
 }
