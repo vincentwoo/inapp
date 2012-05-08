@@ -210,7 +210,7 @@ function handleBuy() {
 
 function addInstrumentDone() {
   if ($('#showinstruments_one').is(':visible')) {
-    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), function() { appendInstrument(false); });
+    scrollTo($('#showinstruments_one'), $('#showinstruments_multi'), function() { appendInstrument(true); });
   } else if ($('#newuser').is(':visible')) {
     scrollTo($('#newuser'), $('#showinstruments_one'));
     $('#buybutton').removeClass('disabled');

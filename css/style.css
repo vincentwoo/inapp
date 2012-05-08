@@ -219,7 +219,6 @@ body {
         background-repeat: no-repeat;
         width: 200px;
         height: 125px;
-        margin: 0 auto;
         border-radius: 10px;
         margin-bottom: 10px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -276,7 +275,7 @@ body {
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       font-weight: bold;
       padding: 10px;
-      margin: 0 auto 15px auto;
+      margin-bottom: 10px;
     }
       #bigcard img {
         margin: 0 10px 10px 0;
@@ -326,11 +325,11 @@ ul.instrument_list {
 }
 
 .instrument_list li:hover {
-    background: #ddd;
+    background: #dcd1a8;
 }
 
 .instrument_list li.card_line_selected:hover {
-    background:  #ddd url('../images/check.png') left center no-repeat;
+    background:  #dcd1a8 url('../images/check.png') left center no-repeat;
 }
 
 .instrument_list li.expired:hover {
