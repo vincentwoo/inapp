@@ -7,12 +7,7 @@ $(function() {
     });
   });
 
-  $('#cardchange').click(function() {
-
-    
-    slideToggle();
-  });
-
+  $('#cardchange').click(slideToggle);
   $('#buybutton').click(handleBuy);
 
   $('.instrument_list li').click(function() {
@@ -37,7 +32,8 @@ $(function() {
 });
 
 function updateCardThumb(card) {
-  $('#cardchange').html("<img src='images/cc_" + card.attr("card_type") + ".png'> ***-" + card.attr("card_num") + " <img id='cardarrow' src='images/disclosure_arrow_dk_grey.png' />");
+  $('#cardimg').attr('src', 'images/cc_' + card.attr('card_type') + '.png');
+  $('#cardtext').text("***-" + card.attr("card_num"));
   $('#cardchange').attr('card_type', card.attr('card_type'));
   $('#cardchange').attr('card_num', card.attr('card_num'));
 }
@@ -202,7 +198,7 @@ function handleBuy() {
       }
       $('#receipt_instrument').html((card_type_name != "Card" ? "<img src='images/cc_" + card_type + ".png'>" : "") + "<span class='card_type_name'>" + card_type_name + ' ***-' + $('#cardchange').attr('card_num') + "</span>");
       $('#receipt_date').text('Apr 30, 2012');
-      $('#closebutton').show();
+      showButton('closebutton');
       $('#receipt').slideDown();
     }, 5000);
   })
@@ -257,17 +253,17 @@ function appendInstrument(is_multi) {
   cloned.addClass('card_line_selected');
   updateCardThumb(cloned);
   cloned.hide();
-  cloned.slideDown(400, function() {
+  cloned.slideDown('fast', function() {
     $('#multi_instrument_list').scrollTop(0);
     if (is_multi == true) {
-      setTimeout(slideIn, 1000);
+      setTimeout(slideIn, 1500);
     }
   });
 }
 
 function loginDone() {
-  showButton('buybutton');
   $('#buybutton').addClass('disabled');
+  showButton('buybutton');
   scrollTo($('#notlogged'), $('#newuser'));
 }
 
@@ -283,6 +279,7 @@ function scrollTo(current, target, callback) {
       scrollTop: target.offset().top - slider.offset().top + slider.scrollTop() - 15
     }, 500, function () {
       current.hide();
+      current.css('height', 'auto');
       slider.css('height', 'auto');
       if (callback) callback();
     });
